@@ -29,6 +29,9 @@ html{
 section{
     padding: 2rem  9%;
 }
+section:nth-child(even){
+    background: #f5f5f5;
+}
 .btn{
     margin-top: 2rem;
     padding: .75rem;
@@ -141,7 +144,27 @@ section{
     padding-bottom: 5rem;
 }
 .icons-container .icons{
-    background: #eee;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 2.5rem;
+}
+.icons-container .icons i{
+    font-size: 4.5rem;
+    color: var(--cyan);
+    padding-bottom: .7rem ;
+}
+
+.icons-container .icons h3{
+    font-size: 4.5rem;
+    color: var(--black);
+    padding-bottom: .5rem 0 ;
+    text-shadow: var(--text-shadow);
+}
+.icons-container .icons p{
+    font-size: 1.7rem;
+    color: var(--light-color);
 
 }
 
