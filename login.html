@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeartCare</title>
+    <meta charset="utf-8">
+    <title>Login |HeartCare</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    
 </head>
+
 <body>
-    // lol
+    <div class="background">
+        <div class="brand"><a class="logo"><i id="logoo" class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a></div>
+        <div class="slogan">We care about your health</div>
+        <div class="wrapper">
+            <div class="title">
+                Login
+            </div>
+            <form action="login.php" method="post">
+                <div class="field">
+                    <input type="text" name="userID" required>
+                    <label>User ID</label>
+                </div>
+                <div class="field">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="content">
+                    <div class="checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">
+                    Not a member? <a href="signup.html">Signup now</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
