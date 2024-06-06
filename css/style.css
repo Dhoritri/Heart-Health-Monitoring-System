@@ -2,10 +2,11 @@
 :root{
     --green: #16a085;
     --black:#444;
+    --cyan:#008AB3;
     --light-color:#777;
     --box-shadow:.5rem .5rem 0 rgba(22,160,133, .2);
     --text-shadow:.5rem .5rem 0 rgba(0,0,0, .2);
-    --border: .2rem solid var(var(--green));
+    --border: .2rem solid var(--cyan) ;
 
 }
 *{
@@ -89,6 +90,11 @@ section{
 }
 .login:hover{
     background-color: #008AB3;
+    font-size: 18px;
+}
+.header .nav-link .nvlink:hover{
+    color: #008AB3;
+    font-size: 20px;
 }
 #menu-btn{
     font-size: 2.5rem;
@@ -152,6 +158,10 @@ section{
     }
     .header{
         padding:2rem;
+    }
+    section{
+        padding: 2rem;
+
     }
 } 
 @media(max-width:768px){
