@@ -175,14 +175,25 @@
         .header .logo{
             color: #E94A2E;
         }
-
+        .brand{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            
+        }
+        .brand i{
+            color: red;
+        }
         .brand a{
 
             text-decoration: none;
         }
-        .brand #logoo{
+        .curs{
+            font-style: italic;
+            color: red;
 
-            color: #E94A2E;
         }
 
-
+        span{
+            color: #fff;
+        }
