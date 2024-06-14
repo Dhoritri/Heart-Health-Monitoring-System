@@ -10,10 +10,7 @@
     --border: .2rem solid var(--cyan) ;
 
 }
-.title h1{
-    text-shadow: var(--text-shadow);
-    font-size: 40px;
-}
+
 *{
     font-family: 'Poppins',sans-serif;
     margin: 0;

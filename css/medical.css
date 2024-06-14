@@ -1,8 +1,14 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 *{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all .2s ease-out;
+    text-decoration:none;
+}
+/* body{
     font-family: 'Poppins',sans-serif;
     margin: 0;
     padding: 0;
@@ -15,9 +21,9 @@
    
     margin:0;
     padding:0;
-    box-sizing: border-box;
-}
-body {
+
+} */
+/* body {
 
     background-color: #f8f8f8;
     display: flex;
@@ -25,17 +31,138 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+} */
+ html{
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-padding: 7rem;
+    scroll-behavior: smooth;
+ }
+.heading{
+    text-align: center;
+    padding: bottom;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 5rem;
+    letter-spacing: .4rem;
+}
+.heading span{
+    text-transform: uppercase;
+    color: var(--black);
+}
+.btn{
+    
+    margin-top: 2rem;
+    padding: .75rem;
+    padding-left: 1rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    color: #008AB3;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn span{
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+    background: #008AB3;
+    color: #fff;
+    margin-left: .5rem;
+
+}
+.btn:hover {
+    background:#008AB3 ;
+    color: #fff;
+
+}
+.btn:hover span{
+    color: #008AB3;
+    background: #fff;
+    margin-left: 1rem;
+}
+
+.header{
+    padding:2rem 4%;
+    position: sticky;
+    top: 0;left: 0;right: 0;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    
+}
+.header .logo{
+    font-size: 2.5rem;
+    color: #008AB3;
+    text-decoration: none;
+}
+.header .logo i{
+    color: #E94A2E;
+}
+.header .nav{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.header .nav a{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    
+    text-decoration: none;
+}
+.login{
+    background-color:#9fe9ff;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin: auto;
+}
+.login:hover{
+    background-color: #008AB3;
+    font-size: 18px;
+}
+.header .nav-link .nvlink:hover{
+    color: #008AB3;
+    font-size: 20px;
+}
+#menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:#000000;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.form{
+    
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
 }
 
 .form-container {
+    
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
-}
 
+}
+.form-container a{
+    font-size: 16px ;
+}
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -85,3 +212,55 @@ button:hover {
     background-color: #0056b3;
 }
 
+
+
+/* media queries*/
+@media(max-width:450px){
+
+    html{
+        font-size:55%
+    }
+    .header{
+        padding:2rem;
+    }
+    section{
+        padding: 2rem;
+
+    }
+} 
+@media(max-width:768px){
+    #menu-btn{
+        display: initial;
+    }
+    .header .nav{
+        position: absolute;
+        top:115%;right: 2rem;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        width: 30rem;
+        border: var(--border);
+        background: #fff;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top right;
+        transition: none;
+    }
+    .header .nav.active{
+        transform: scale(1);
+        opacity: 1;
+        transition: .2s ease-out;
+    
+    }
+    .header .nav a {
+        font-size: 2rem;
+        display: block;
+        margin: 2.5rem;
+    }
+
+}
+@media(max-width:991px){
+
+    html{
+        font-size:50%
+    }
+}

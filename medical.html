@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="/css/medical.css">
 </head>
 <body>
-    
+    <header class="header">
+        <a href="#" class="logo"
+          ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
+        >
+        <div class="nav-link">
+          <nav class="nav">
+            <a href="index.html" class="nvlink">Home</a>
+            <a href="doctors.html" class="nvlink">Doctors</a>
+            <a href="appointment.html" class="nvlink">Appointment</a>
+
+          </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+      </header>
+      <section class="form">
     <div class="form-container">
         <h2>Medical History Form</h2>
         <form action="#" method="post">
@@ -23,8 +37,9 @@
                 <label for="medicinePrescribed">Medicine Prescribed:</label>
                 <input type="text" id="medicinePrescribed" name="medicinePrescribed" required>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submitMed">Submit</button>
         </form>
     </div>
+</section>
 </body>
 </html>
