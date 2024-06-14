@@ -137,15 +137,7 @@ ul li{
     list-style: none;
 }
 
-.doctors-layout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    gap: 40px;
-    margin: 20px;
-}
+
 .content{
     display: flex;
     flex-direction: column;
@@ -156,41 +148,79 @@ ul li{
     padding: 40px 0;
 
 }
-.doctors-item{
+.doctors-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;  /* Added gap between doctor items */
+    justify-content: center;
+}
 
+.doctors-item {
+    margin: 0 auto;
     border: 2px solid rgba(0, 0, 0, .5);
     border-radius: 25px;
-    width: 450px;
     overflow: hidden;
-}
-.doctors-item:hover .content{
-    transform: scale(1.1)
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 2rem;
+    margin-right: 2rem;    
 }
 
-h1{
-    text-align: center;
+.doctors-info{
+    padding: 2rem 0;
 }
-.chamb{
-    text-decoration: none;
-    padding: 15px 20px;
-    color: white;
-    background-color: #008AB3;
-    border-radius: 20px;
 
-}
-.chamb:hover{
-    background:#00c3ff;
-    color: #f7684f;
+.doctors-item .content {
+    padding: 1rem;
     
 }
 
-p{
-    font-weight: 600;
+.doctors-item .photo img {
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
+}
+
+.doctors-item .info {
+    padding: 10px 0;
+}
+
+.doctors-item .info .title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.doctors-item .info .degree,
+.doctors-item .info .speciality,
+.doctors-item .info .designation,
+.doctors-item .info .workplace {
+    margin: 5px 0;
+}
+
+.doctors-item .chamb {
+    display: block;
     text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #007bff;
 }
-.speciality{
-    color: #e94a2e;
+
+.doctors-item .chamb:hover {
+    background-color: #e2e6ea;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
