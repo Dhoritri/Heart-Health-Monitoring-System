@@ -9,10 +9,11 @@
 }
 
 .container {
+    position: relative;
     max-width: 700px;
     width: 100%;
     background-color: #fff;
-    padding: 25px 30px;
+    padding: 25px ;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -34,35 +35,38 @@
     background: linear-gradient(135deg, #008AB3, #008AB3);
 }
 
-.content form .user-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-}
-
 form .user-details .input-box {
-    margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
+    width: 100%;
+  margin-top: 20px;
 }
 
 form .input-box span.details {
     display: block;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .user-details .input-box input {
+    position: relative;
     height: 40px;
-    width: 635px;
+    width: 100%;
     outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
+
+/**coloumn**/
+.user-details .column {
+    display: flex;
+    column-gap: 15px;
+  }
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
@@ -112,31 +116,149 @@ form .input-box span.details {
     }
 }
 
-form .button {
-    height: 45px;
-    margin: 35px 0;
-    border-radius: 50px;
-    background: #00F0B5;
+/**
+.user-details .column {
+    display: flex;
+    column-gap:20px;
+  }
+**/
+
+/** geender selection **/
+.gender-selection {
+    display: flex;
+    gap: 20px; /* Space between radio buttons */
+    align-items: center;
+    margin-top: 10px;
 }
 
-form .button input {
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
+.gender-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+}
+
+.gender-selection input[type="radio"] {
+    display: none;
+}
+
+.gender-selection .dot {
+    height: 20px;
+    width: 20px;
+    background-color: #b4c6c7;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin-right: 15px; /* Space between dot and label text */
+}
+
+.gender-selection input[type="radio"]:checked + .dot {
+    background-color: #008AB3;
+}
+
+.gender-selection .dot::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/**
+.gender-selection input[type="radio"]:checked + .dot::after {
+    background-color: #fff;
+}
+**/  
+/**gender selection end**/  
+
+
+/** marital status-selection **/
+.marital-status-selection {
+    display: flex;
+    gap: 20px; /* Space between radio buttons */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.marital-status-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+}
+
+.marital-status-selection input[type="radio"] {
+    display: none;
+}
+
+.marital-status-selection .dot {
+    height: 20px;
+    width: 20px;
+    background-color: #b4c6c7;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin-right: 15px; /* Space between dot and label text */
+}
+
+.marital-status-selection input[type="radio"]:checked + .dot {
+    background-color: #008AB3;
+}
+
+.marital-status-selection .dot::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+/** marital status-selection end **/
+
+@media (max-width: 584px) {
+    .gender-selection {
+        flex-direction: column;
+        gap: 10px; /* Reduced space between radio buttons in column layout */
+    }
+}
+
+/*new button*/
+.button{
     border: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px 16px;
+    background-color: rgb(0, 172, 252);
+    border-radius: 6px;
+    margin: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg,  #008AB3, #008AB3);
+    text-align: center;
+}
+.button:hover{
+    transform: scale(1.1);  
+    background: rgb(0, 129, 189);
 }
 
-form .button input:hover {
-    background: linear-gradient(-135deg,  #008AB3, #008AB3);
+/**bloodtype**/
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
 }
-
+/**bloodtype**/
 .background {
     background: linear-gradient(rgba(0, 66, 87, 0.13), rgba(0, 52, 61, 0.342)), 
                 url('../images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif');
@@ -167,6 +289,7 @@ form .button input:hover {
 }
 
 .wrapper {
+    height: 1000;
     width: 700px;
     background: rgba(255, 255, 255, 1);
     border-radius: 15px;
@@ -177,7 +300,7 @@ form .button input:hover {
     font-size: 35px;
     font-weight: 600;
     text-align: center;
-    line-height: 100px;
+    line-height: 80px;
     color: #fff;
     user-select: none;
     border-radius: 15px 15px 0 0;
@@ -185,11 +308,11 @@ form .button input:hover {
 }
 
 .wrapper form {
-    padding: 10px 30px 50px 30px;
+    padding: 1px 20px 10px 20px;
 }
 
 .wrapper form .field {
-    height: 50px;
+    height: px;
     width: 100%;
     margin-top: 20px;
     position: relative;
