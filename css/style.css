@@ -266,6 +266,28 @@ section:nth-child(even){
 }
 
 
+.typewriter{ display: inline-block; }
+
+.text{
+    font-size:5em;
+    letter-spacing:2px;
+    border-right:3px solid;
+    width: 100%;
+    white-space:nowrap;
+    overflow: hidden;
+    animation:
+        typing 1.5s steps(18),
+        cursor .5s step-end infinite alternate;
+}
+@keyframes cursor{
+    50%{ border-color: transparent}
+}
+
+@keyframes typing{
+    from{width:0}
+}
+
+
 
 
 
