@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Medicine Recommendations</title>
+    <link rel="stylesheet" href="/css/medicine.css">
+</head>
+<body>
+    <header>
+        <header class="header">
+            <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+            <div class="nav-link">
+                <nav class="nav">
+                    <a href="#home" class="nvlink">Home</a>
+                    <a href="#services" class="nvlink">Services</a>
+                    <a href="#about" class="nvlink">About</a>
+                    <a href="doctors.html" class="nvlink">Doctors</a>
+                    <a href="appointment.html" class="nvlink">Appointment</a>
+                </nav>
+            </div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </header>
+       
+    </header>
+     <h1>Heart Disease Medicine Recommendations</h1>
+    <main>
+        <div class="selection">
+            <label for="disease">Select a Heart Disease:</label>
+            <select id="disease" onchange="showRecommendations()">
+                <option value="">--Select--</option>
+                <option value="hypertension">Hypertension</option>
+                <option value="cad">Coronary Artery Disease</option>
+                <option value="heartFailure">Heart Failure</option>
+                <option value="arrhythmia">Arrhythmia</option>
+                <option value="valvular">Valvular Heart Disease</option>
+                <option value="congenital">Congenital Heart Disease</option>
+                <option value="cardiomyopathy">Cardiomyopathy</option>
+                <option value="pericarditis">Pericarditis</option>
+                <option value="endocarditis">Endocarditis</option>
+                <option value="pulmonaryHypertension">Pulmonary Hypertension</option>
+            </select>
+        </div>
+        <section id="recommendations">
+            <!-- Recommendations will be displayed here -->
+        </section>
+    </main>
+    <footer>
+        <p>Consult with your healthcare provider before starting any medication.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="/js/meds.js"></script>
+</body>
+</html>

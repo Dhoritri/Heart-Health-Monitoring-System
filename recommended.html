@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health Recommendations</title>
+    <link rel="stylesheet" href="/css/recommended.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+        <div class="nav-link">
+            <nav class="nav">
+                <a href="#home" class="nvlink">Home</a>
+                <a href="#services" class="nvlink">Services</a>
+                <a href="#about" class="nvlink">About</a>
+                <a href="doctors.html" class="nvlink">Doctors</a>
+                <a href="appointment.html" class="nvlink">Appointment</a>
+            </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <main>
+        <section id="recom"><h1 class="getRem">Get Recommendations</h1></section>
+        <section id="intro">
+            <p>Find appropriate diet, tests, and facilities based on your heart condition.</p>
+        </section>
+        <section id="form">
+            <h2 class="selectCondition">Enter Your Heart Condition</h2>
+            <form id="heart-condition-form">
+                <label for="condition">Heart Condition:</label>
+                <select id="condition" name="condition">
+                    <option value="hypertension">Hypertension</option>
+                    <option value="coronary-artery-disease">Coronary Artery Disease</option>
+                    <option value="heart-failure">Heart Failure</option>
+                    <option value="arrhythmia">Arrhythmia</option>
+                    <option value="valvular-heart-disease">Valvular Heart Disease</option>
+                    <option value="congenital-heart-disease">Congenital Heart Disease</option>
+                    <option value="cardiomyopathy">Cardiomyopathy</option>
+                    <option value="pericarditis">Pericarditis</option>
+                    <option value="endocarditis">Endocarditis</option>
+                    <option value="pulmonary-hypertension">Pulmonary Hypertension</option>
+                </select>
+                <button type="button" class="btnRecom" onclick="recommend()">Get Recommendations</button>
+            </form>
+        </section>
+        <section id="recommendations">
+            <h2 class="recomended">Recommendations</h2>
+            <div class="cont">
+                <div id="diet"></div>
+                <div id="tests"></div>
+                <div id="facilities"></div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/js/style.js"></script>    
+
+    <script>
+        function recommend() {
+            const condition = document.getElementById('condition').value;
+            let diet, tests, facilities;
+
+            if (condition === 'hypertension') {
+                diet = '<h3>Diet</h3><p>Low-sodium diet, rich in fruits, vegetables, and whole grains.</p>';
+                tests = '<h3>Tests</h3><p>Blood pressure monitoring, cholesterol tests, kidney function tests.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiology clinics, hypertension specialists.</p>';
+            } else if (condition === 'coronary-artery-disease') {
+                diet = '<h3>Diet</h3><p>Heart-healthy diet, low in saturated fats and cholesterol.</p>';
+                tests = '<h3>Tests</h3><p>EKG, stress tests, angiogram.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiac rehabilitation centers, hospitals with cardiac units.</p>';
+            } else if (condition === 'heart-failure') {
+                diet = '<h3>Diet</h3><p>Low-sodium diet, fluid restriction, balanced nutrients.</p>';
+                tests = '<h3>Tests</h3><p>Echocardiogram, BNP blood test, MRI.</p>';
+                facilities = '<h3>Facilities</h3><p>Heart failure clinics, cardiology hospitals.</p>';
+            } else if (condition === 'arrhythmia') {
+                diet = '<h3>Diet</h3><p>Heart-healthy diet, avoiding caffeine and alcohol.</p>';
+                tests = '<h3>Tests</h3><p>EKG, Holter monitor, electrophysiology study.</p>';
+                facilities = '<h3>Facilities</h3><p>Electrophysiology labs, arrhythmia specialists.</p>';
+            } else if (condition === 'valvular-heart-disease') {
+                diet = '<h3>Diet</h3><p>Low-sodium diet, balanced and nutritious food.</p>';
+                tests = '<h3>Tests</h3><p>Echocardiogram, EKG, cardiac MRI.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiology clinics, surgical centers.</p>';
+            } else if (condition === 'congenital-heart-disease') {
+                diet = '<h3>Diet</h3><p>Healthy balanced diet, tailored to individual needs.</p>';
+                tests = '<h3>Tests</h3><p>Echocardiogram, MRI, cardiac catheterization.</p>';
+                facilities = '<h3>Facilities</h3><p>Pediatric cardiology centers, specialized hospitals.</p>';
+            } else if (condition === 'cardiomyopathy') {
+                diet = '<h3>Diet</h3><p>Low-sodium diet, heart-healthy foods.</p>';
+                tests = '<h3>Tests</h3><p>Echocardiogram, EKG, genetic testing.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiomyopathy centers, heart transplant facilities.</p>';
+            } else if (condition === 'pericarditis') {
+                diet = '<h3>Diet</h3><p>Anti-inflammatory diet, balanced nutrition.</p>';
+                tests = '<h3>Tests</h3><p>Echocardiogram, MRI, blood tests.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiology clinics, hospitals with cardiac units.</p>';
+            } else if (condition === 'endocarditis') {
+                diet = '<h3>Diet</h3><p>Heart-healthy diet, nutritious and balanced meals.</p>';
+                tests = '<h3>Tests</h3><p>Blood cultures, echocardiogram, CT scan.</p>';
+                facilities = '<h3>Facilities</h3><p>Cardiology clinics, hospitals with infectious disease specialists.</p>';
+            } else if (condition === 'pulmonary-hypertension') {
+                diet = '<h3>Diet</h3><p>Low-sodium diet, avoid processed foods.</p>';
+                tests = '<h3>Tests</h3><p>Right heart catheterization, echocardiogram, chest X-ray.</p>';
+                facilities = '<h3>Facilities</h3><p>Pulmonary hypertension centers, specialized hospitals.</p>';
+            }
+
+            document.getElementById('diet').innerHTML = diet;
+            document.getElementById('tests').innerHTML = tests;
+            document.getElementById('facilities').innerHTML = facilities;
+        }
+    </script>
+</body>
+</html>
