@@ -14,10 +14,9 @@
         <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
         <div class="nav-link">
             <nav class="nav">
-                <a href="#home" class="nvlink">Home</a>
-                <a href="#services" class="nvlink">Services</a>
-                <a href="#about" class="nvlink">About</a>
+                <a href="#index.html" class="nvlink">Home</a>
                 <a href="doctors.html" class="nvlink">Doctors</a>
+                <a href="medicine.html" class="nvlink">Medicines</a>
                 <a href="appointment.html" class="nvlink">Appointment</a>
             </nav>
         </div>
@@ -26,7 +25,7 @@
     <main>
         <section id="recom"><h1 class="getRem">Get Recommendations</h1></section>
         <section id="intro">
-            <p>Find appropriate diet, tests, and facilities based on your heart condition.</p>
+            <p class="para">Find appropriate diet, tests, and facilities based on your heart condition.</p>
         </section>
         <section id="form">
             <h2 class="selectCondition">Enter Your Heart Condition</h2>
@@ -50,7 +49,7 @@
         <section id="recommendations">
             <h2 class="recomended">Recommendations</h2>
             <div class="cont">
-                <div id="diet"></div>
+                <div id="diet" "></div>
                 <div id="tests"></div>
                 <div id="facilities"></div>
             </div>
@@ -68,7 +67,7 @@
             let diet, tests, facilities;
 
             if (condition === 'hypertension') {
-                diet = '<h3>Diet</h3><p>Low-sodium diet, rich in fruits, vegetables, and whole grains.</p>';
+                diet = '<h3 >Diet</h3><p>Low-sodium diet, rich in fruits, vegetables, and whole grains.</p>';
                 tests = '<h3>Tests</h3><p>Blood pressure monitoring, cholesterol tests, kidney function tests.</p>';
                 facilities = '<h3>Facilities</h3><p>Cardiology clinics, hypertension specialists.</p>';
             } else if (condition === 'coronary-artery-disease') {

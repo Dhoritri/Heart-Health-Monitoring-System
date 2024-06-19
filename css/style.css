@@ -146,6 +146,10 @@ section:nth-child(even){
     cursor: pointer;
     display: none;
 }
+section{
+    gap:60px;
+
+}
 .home{
     display: flex;
     align-items: center;
@@ -180,6 +184,7 @@ section:nth-child(even){
     grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
     padding-top: 5rem;
     padding-bottom: 5rem;
+    gap: 20px;
 }
 .icons-container .icons{
     border: var(--border);
