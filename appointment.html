@@ -1,235 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book an Appointment</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/appointment.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/appointment.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <header class="header">
-
-        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
-        <div class="nav-link">
-            <nav class="nav">
-            <a href="index.html" class="nvlink">Home</a>
-            <a href="doctors.html" class="nvlink">Doctors</a>
-            <a href="appointment.html" class="nvlink">Appointment</a>
-                
-            </nav>
-        </div>
-        <div id="menu-btn" class="fas fa-bars"></div>
+      <a href="#" class="logo"
+        ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
+      >
+      <div class="nav-link">
+        <nav class="nav">
+          <a href="index.html" class="nvlink">Home</a>
+          <a href="doctors.html" class="nvlink">Doctors</a>
+          <a href="appointment.html" class="nvlink">Appointment</a>
+        </nav>
+      </div>
+      <div id="menu-btn" class="fas fa-bars"></div>
     </header>
     <div class="formbold-main-wrapper">
-        <div class="formbold-form-wrapper">
-          <form action="https://formbold.com/s/FORM_ID" method="POST">
-            <div class="formbold-mb-5">
-              <label for="name" class="formbold-form-label"> Full Name </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your Full Name"
-                class="formbold-form-input"
-              />
-            </div>
-  
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="phone" class="formbold-form-label"> Phone Number </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone number"
-                    class="formbold-form-input"
-                  />
-                </div>
-              </div
-              class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="email" class="formbold-form-label"> Email Address </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    class="formbold-form-input"
-                  />
-                </div>
-            </div>
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                    <label for="Issue" class="formbold-form-label"> Issue </label>
-                    <input
-                      type="text"
-                      name="Issue"
-                      id="Issue"
-                      placeholder="Describe your Issue"
-                      class="formbold-form-input"
-                    />
-                  </div>
-              </div>
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                    <label for="Issue" class="formbold-form-label"> Choose your Physician </label>
-                    <div class="select-box">
-                      <select>
-                        <option hidden>Select Your physician</option>
-                        <option>Assoc. Prof. Dr. Bijoy Dutta</option>
-                        <option>Dr. AKS Zahid Mahmud Khan</option>..<option>Prof. Dr. Ashok Kumar Dutta</option>..<option>Dr. Maimuna Sultana</option>
-                        <option>Prof. Dr. M. Nazrul Islam</option>..<option>Prof. Dr. Dhiman Banik</option>..<option>Prof. Dr. Md. Mohsin Hossain</option>
-                        <option>Prof. Dr. Sajal Banerjee</option>..<option>Prof. Dr. M. A. Baqui</option>..<option>Prof. Dr. Md. Atahar Ali</option>
-                        <option>Prof. Dr. Abdul Wadud Chowdhury</option>..<option>Prof. Dr. Baren Chakraborty</option>..<option>Dr. Md. Abul Khair</option>
-                        <option>Prof. Dr. Md. Khalequzzaman</option>..<option>Prof. Dr. Toufiqur Rahman Faruque</option>..<option>Dr. Golam Morshed</option>
-                        <option>Dr. Mohsin Ahmed</option>..<option>Prof. Dr. M Touhidul Haque</option>..<option>Prof. Dr. Md. Roushan Ali</option>
-                        <option>Prof. Dr. Mir Jamal Uddin</option>..<option>Prof. Dr. Mohammad Kabiruzzaman</option>..<option>Prof. Dr. Chowdhury Meshkat Ahmed</option>
-                        <option>Prof. Dr. Syed Ali Ahsan</option>..<option>Prof. Dr. Mohammad Safiuddin</option>..<option>Prof. Dr. Syed Nasir Uddin</option>
-                        <option>Dr. Mohammad Ullah Firoze</option>..<option>Dr. AKM Mohiuddin Bhuiyan Masum</option>..<option>Dr. Pradip Kumar Karmakar</option>
-                        <option>Prof. Dr. Md. Shahabuddin Talukder</option>..<option>Prof. Dr. Md. Abdul Kader Akanda</option>..<option>Prof. Dr. Sabina Hashem</option>
-                        <option>Prof. Dr. Mohammad Salahuddin</option>..<option>Dr. Md. Mukhlesur Rahman</option>..<option>Dr. Nur Alam</option>
-                        <option>Dr. Muhammed Akhtaruzzaman</option>..<option>Dr. Gobinda Chandra Roy</option>..<option>Prof. Dr. Lt. Col. Syeda Aleya Sultana</option>
-                        <option>Prof. Dr. Md. Afzalur Rahman</option>..<option>Prof. Col. Dr. Zehad Khan</option>..<option>Prof. Dr. Md. Azizul Bari</option>
-                        <option>Dr. Tanjima Parveen</option>..<option>Dr. Mohammad Ali</option>..<option>Prof. Dr. A.Q.M Reza</option>
+      <div class="formbold-form-wrapper">
+        <form action="https://formbold.com/s/FORM_ID" method="POST">
+          <div class="formbold-mb-5">
+            <label for="name" class="formbold-form-label"> Full Name </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your Full Name"
+              class="formbold-form-input"
+            />
+          </div>
 
-                      </select>
-                  </div>
-                </div>
-            </div>
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5 w-full">
-                  <label for="date" class="formbold-form-label"> Date </label>
-                  <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    class="formbold-form-input"
-                  />
-                </div>
-              </div
-              class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="time" class="formbold-form-label"> Time </label>
-                  <input
-                    type="time"
-                    name="time"
-                    id="time"
-                    class="formbold-form-input"
-                  />
-                </div>
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="phone" class="formbold-form-label">
+                  Phone Number
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="Enter your phone number"
+                  class="formbold-form-input"
+                />
               </div>
             </div>
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="bill" class="formbold-form-label"> Total Bill </label>
-                  <input
-                    type="number"
-                    name="bill"
-                    id="bill"
-                    placeholder="Genarate bill"
-                    class="formbold-form-input"
-                  />
-                </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="email" class="formbold-form-label">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  class="formbold-form-input"
+                />
               </div>
-              
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="card" class="formbold-form-label"> Cards accepted: </label>                  
+            </div>
+          </div>
+
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="Issue" class="formbold-form-label"> Issue </label>
+                <input
+                  type="text"
+                  name="Issue"
+                  id="Issue"
+                  placeholder="Describe your Issue"
+                  class="formbold-form-input"
+                />
+              </div>
+            </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="physician" class="formbold-form-label">
+                  Choose your Physician
+                </label>
+                <div class="select-box">
+                  <select name="physician" class="formbold-form-input">
+                    <option hidden>Select Your Physician</option>
+                    <option>Assoc. Prof. Dr. Bijoy Dutta</option>
+                    <option>Dr. AKS Zahid Mahmud Khan</option>
+                    ..
+                    <option>Prof. Dr. Ashok Kumar Dutta</option>
+                    ..
+                    <option>Dr. Maimuna Sultana</option>
+                    <option>Prof. Dr. M. Nazrul Islam</option>
+                    ..
+                    <option>Prof. Dr. Dhiman Banik</option>
                     
-                    <img src="/images/card_img.png" alt="Cards accepted">
+                    <option>Prof. Dr. Md. Mohsin Hossain</option>
+                    <option>Prof. Dr. Sajal Banerjee</option>
+                    ..
+                    <option>Prof. Dr. M. A. Baqui</option>
+                    ..
+                    <option>Prof. Dr. Md. Atahar Ali</option>
+                    <option>Prof. Dr. Abdul Wadud Chowdhury</option>
+                    ..
+                    <option>Prof. Dr. Baren Chakraborty</option>
+                    ..
+                    <option>Dr. Md. Abul Khair</option>
+                    <option>Prof. Dr. Md. Khalequzzaman</option>
+                    ..
+                    <option>Prof. Dr. Toufiqur Rahman Faruque</option>
+                    ..
+                    <option>Dr. Golam Morshed</option>
+                    <option>Dr. Mohsin Ahmed</option>
+                    ..
+                    <option>Prof. Dr. M Touhidul Haque</option>
+                    ..
+                    <option>Prof. Dr. Md. Roushan Ali</option>
+                    <option>Prof. Dr. Mir Jamal Uddin</option>
+                    ..
+                    <option>Prof. Dr. Mohammad Kabiruzzaman</option>
+                    ..
+                    <option>Prof. Dr. Chowdhury Meshkat Ahmed</option>
+                    <option>Prof. Dr. Syed Ali Ahsan</option>
+                    ..
+                    <option>Prof. Dr. Mohammad Safiuddin</option>
+                    ..
+                    <option>Prof. Dr. Syed Nasir Uddin</option>
+                    <option>Dr. Mohammad Ullah Firoze</option>
+                    ..
+                    <option>Dr. AKM Mohiuddin Bhuiyan Masum</option>
+                    ..
+                    <option>Dr. Pradip Kumar Karmakar</option>
+                    <option>Prof. Dr. Md. Shahabuddin Talukder</option>
+                    ..
+                    <option>Prof. Dr. Md. Abdul Kader Akanda</option>
+                    ..
+                    <option>Prof. Dr. Sabina Hashem</option>
+                    <option>Prof. Dr. Mohammad Salahuddin</option>
+                    ..
+                    <option>Dr. Md. Mukhlesur Rahman</option>
+                    ..
+                    <option>Dr. Nur Alam</option>
+                    <option>Dr. Muhammed Akhtaruzzaman</option>
+                    ..
+                    <option>Dr. Gobinda Chandra Roy</option>
+                    ..
+                    <option>Prof. Dr. Lt. Col. Syeda Aleya Sultana</option>
+                    <option>Prof. Dr. Md. Afzalur Rahman</option>
+                    ..
+                    <option>Prof. Col. Dr. Zehad Khan</option>
+                    ..
+                    <option>Prof. Dr. Md. Azizul Bari</option>
+                    <option>Dr. Tanjima Parveen</option>
+                    ..
+                    <option>Dr. Mohammad Ali</option>
+                    ..
+                    <option>Prof. Dr. A.Q.M Reza</option>
+                  </select>
                 </div>
               </div>
-              <div>
-                <div class="formbold-mb-5">
-                  <label for="cvv" class="formbold-form-label"> CVV :</label>
-                  <input
-                    type="number"
-                    name="cvv"
-                    id="cvv"
-                    placeholder="Enter your CVV Num"
-                    class="formbold-form-input"
-                  />
-                </div>
             </div>
-            <div class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="card name" class="formbold-form-label"> Name On Card : </label>
-                  <input
-                    type="text"
-                    name="card name"
-                    id="card name"
-                    placeholder="Enter your Name On Card"
-                    class="formbold-form-input"
-                  />
-                </div>
+          </div>
+
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="date" class="formbold-form-label"> Date </label>
+                <input
+                  type="date"
+                  name="date"
+                  id="date"
+                  class="formbold-form-input"
+                />
               </div>
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="exp month" class="formbold-form-label"> Exp Month : </label>
-                  <div class="select-box">
-                    <select>
-                      <option hidden>Select Your Exp Month  </option>
-                      <option>January</option>..<option>February</option>
-                      <option>March</option>..<option>April</option>
-                      <option>May</option>..<option>June</option>
-                      <option>July</option>..<option>August</option>
-                      <option>September</option>..<option>October</option>
-                      <option>November</option>..<option>December</option>
-                    </select>
-                </div>
-                </div>
-            </div
-            class="flex flex-wrap formbold--mx-3">
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="card num" class="formbold-form-label"> Credit Card Number  </label>
-                  <input
-                    type="number"
-                    name="card num"
-                    id="card num"
-                    placeholder="Enter your Card Number"
-                    class="formbold-form-input"
-                  />
-                </div>
+            </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="time" class="formbold-form-label"> Time </label>
+                <input
+                  type="time"
+                  name="time"
+                  id="time"
+                  class="formbold-form-input"
+                />
               </div>
-              <div class="w-full sm:w-half formbold-px-3">
-                <div class="formbold-mb-5">
-                  <label for="exp year" class="formbold-form-label"> Exp Year : </label>
-                  <div class="select-box">
-                    <select>
-                      <option hidden>Select Your Exp Year  </option>
-                      <option>2000</option>..<option>2001</option>..<option>2002</option>..<option>2003</option>..<option>2004</option>
-                      <option>2005</option>..<option>2006</option>..<option>2007</option>..<option>2008</option>..<option>2009</option>
-                      <option>2010</option>..<option>2011</option>..<option>2012</option>..<option>2013</option>..<option>2014</option>
-                      <option>2015</option>..<option>2016</option>..<option>2017</option>..<option>2018</option>..<option>2019</option>
-                      <option>2020</option>..<option>2021</option>..<option>2022</option>..<option>2023</option>..<option>2024</option>
-                      <option>2025</option>..<option>2026</option>..<option>2027</option>..<option>2028</option>..<option>2029</option>
-                      <option>2030</option>..<option>2031</option>..<option>2032</option>..<option>2033</option>..<option>2034</option>
-                      <option>2035</option>..<option>2036</option>..<option>2037</option>..<option>2038</option>..<option>2039</option>
-                      <option>2040</option>..<option>2041</option>..<option>2042</option>..<option>2043</option>..<option>2044</option>
-                      <option>2045</option>..<option>2046</option>..<option>2047</option>..<option>2048</option>..<option>2049</option>
-                    </select>
-                </div>
-                </div>
             </div>
-                                                        
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="bill" class="formbold-form-label"> Total Bill </label>
+            <input
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="Generate bill"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="card-accepted" class="formbold-form-label">
+              Cards accepted:
+            </label>
+            <img src="/images/card_img.png" alt="Cards accepted" />
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="cvv" class="formbold-form-label"> CVV </label>
+            <input
+              type="number"
+              name="cvv"
+              id="cvv"
+              placeholder="Enter your CVV Number"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="card-name" class="formbold-form-label">
+              Name On Card
+            </label>
+            <input
+              type="text"
+              name="card-name"
+              id="card-name"
+              placeholder="Enter your Name On Card"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="exp-month" class="formbold-form-label">
+              Exp Month
+            </label>
+            <div class="select-box">
+              <select name="exp-month" class="formbold-form-input">
+                <option hidden>Select Your Exp Month</option>
+                <option>January</option>..<option>February</option>
+                <option>March</option>..<option>April</option>
+                <option>May</option>..<option>June</option>
+                <option>July</option>..<option>August</option>
+                <option>September</option>..<option>October</option>
+                <option>November</option>..<option>December</option>
+              </select>
             </div>
-      
-            <div>
-              <button class="formbold-btn"> Book Appointment </button>
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="card-num" class="formbold-form-label">
+              Credit Card Number
+            </label>
+            <input
+              type="number"
+              name="card-num"
+              id="card-num"
+              placeholder="Enter your Card Number"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="exp-year" class="formbold-form-label"> Exp Year </label>
+            <div class="select-box">
+              <select name="exp-year" class="formbold-form-input">
+                <option hidden>Select Your Exp Year</option>
+                <option>2000</option>..<option>2001</option>..<option>2002</option>..<option>2003</option>..<option>2004</option>
+                <option>2005</option>..<option>2006</option>..<option>2007</option>..<option>2008</option>..<option>2009</option>
+                <option>2010</option>..<option>2011</option>..<option>2012</option>..<option>2013</option>..<option>2014</option>
+                <option>2015</option>..<option>2016</option>..<option>2017</option>..<option>2018</option>..<option>2019</option>
+                <option>2020</option>..<option>2021</option>..<option>2022</option>..<option>2023</option>..<option>2024</option>
+                <option>2025</option>..<option>2026</option>..<option>2027</option>..<option>2028</option>..<option>2029</option>
+                <option>2030</option>..<option>2031</option>..<option>2032</option>..<option>2033</option>..<option>2034</option>
+                <option>2035</option>..<option>2036</option>..<option>2037</option>..<option>2038</option>..<option>2039</option>
+                <option>2040</option>..<option>2041</option>..<option>2042</option>..<option>2043</option>..<option>2044</option>
+                <option>2045</option>..<option>2046</option>..<option>2047</option>..<option>2048</option>..<option>2049</option>
+              </select>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div>
+            <button class="formbold-btn">Book Appointment</button>
+          </div>
+        </form>
       </div>
-      <script src="/js/style.js"></script>
-</body>
+    </div>
+    <script src="/js/style.js"></script>
+  </body>
 </html>

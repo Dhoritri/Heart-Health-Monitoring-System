@@ -8,7 +8,6 @@
     --box-shadow:.5rem .5rem 0 rgba(22,160,133, .2);
     --text-shadow:.5rem .5rem 0 rgba(0,0,0, .2);
     --border: .2rem solid var(--cyan) ;
-
 }
 *{
     font-family: 'Poppins',sans-serif;
@@ -20,7 +19,6 @@
     text-transform: capitalize;
     transition: all .2s ease-out;
     text-decoration:none;
-   
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -32,7 +30,7 @@
 .row{
     display: flex;
     flex-wrap: wrap;
-  }
+}
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -41,6 +39,7 @@ html{
 }
 section{
     padding: 2rem  9%;
+    margin-bottom: 4rem; /* Increase this value to increase the gap */
 }
 section:nth-child(even){
     background: #f5f5f5;
@@ -58,8 +57,10 @@ section:nth-child(even){
     text-transform: uppercase;
     color: var(--black);
 }
+h1.heading{
+    padding-bottom: 20px;
+}
 .btn{
-    
     margin-top: 2rem;
     padding: .75rem;
     padding-left: 1rem;
@@ -79,12 +80,10 @@ section:nth-child(even){
     background: #008AB3;
     color: #fff;
     margin-left: .5rem;
-
 }
 .btn:hover {
     background:#008AB3 ;
     color: #fff;
-
 }
 .btn:hover span{
     color: #008AB3;
@@ -120,7 +119,6 @@ section:nth-child(even){
 .header .nav a{
     font-size: 1.7rem;
     color: var(--light-color);
-    
     text-decoration: none;
 }
 .login{
@@ -146,10 +144,6 @@ section:nth-child(even){
     cursor: pointer;
     display: none;
 }
-section{
-    gap:60px;
-
-}
 .home{
     display: flex;
     align-items: center;
@@ -161,7 +155,7 @@ section{
     flex: 1 1 45rem;
 }
 .home .image img{
-   width: 100%;
+    width: 100%;
 }
 .home .content {
     flex: 1 1 45rem;
@@ -198,7 +192,6 @@ section{
     color: var(--cyan);
     padding-bottom: .7rem ;
 }
-
 .icons-container .icons h3{
     font-size: 4.5rem;
     color: var(--black);
@@ -208,14 +201,12 @@ section{
 .icons-container .icons p{
     font-size: 1.7rem;
     color: var(--light-color);
-
 }
-
 .services .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(27rem,1fr));
     gap:2rem;
-
+    padding-bottom: 30px;
 }
 .services .box-container .box{
     background: #fff;
@@ -240,7 +231,6 @@ section{
 .services .box-container .box p{
     color: var(--black);
     font-size: 1.5rem;
-    
 }
 .about .row{
     display: flex;
@@ -257,103 +247,132 @@ section{
 .about .row .content {
     flex: 1 1 45rem;
 }
-.about .row .content h3 {
+.about .row .content h3{
+    font-size: 4rem;
     color: var(--black);
     text-shadow: var(--text-shadow);
-    font-size: 4rem;
     line-height: 1.8;
 }
-.about .row .content p {
+.about .row .content p{
+    font-size: 1.5rem;
     color: var(--light-color);
     padding: 1rem 0;
-    font-size: 1.5rem;
     line-height: 1.8;
 }
-
-
-.typewriter{ display: inline-block; }
-
-.text{
-    font-size:5em;
-    letter-spacing:2px;
-    border-right:3px solid;
-    width: 100%;
-    white-space:nowrap;
-    overflow: hidden;
-    animation:
-        typing 1.5s steps(18),
-        cursor .5s step-end infinite alternate;
+.about .row .content .icons-container{
+    padding-top: 1rem;
 }
-@keyframes cursor{
-    50%{ border-color: transparent}
+.about .row .content .icons-container .icons{
+    display: inline-flex;
+    align-items: center;
+    gap:1rem;
+    background: #f5f5f5;
+    border-radius: .5rem;
+    margin: .5rem;
+    padding: .5rem 2rem;
+}
+.about .row .content .icons-container .icons i{
+    font-size: 2.5rem;
+    color: var(--cyan);
+}
+.about .row .content .icons-container .icons span{
+    font-size: 2rem;
+    color: var(--light-color);
+}
+.footer{
+    background: var(--black);
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 2rem;
+}
+.footer .box-container .box h3{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    display: block;
+}
+.footer .box-container .box a:hover{
+    color: #fff;
+    padding-left: 1rem;
+}
+.footer .credit{
+    text-align: center;
+    border-top: .2rem solid rgba(255,255,255,.2);
+    padding: 2.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+.loader-container.active{
+    display: none;
+}
+.loader-container img{
+    width: 10rem;
 }
 
-@keyframes typing{
-    from{width:0}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries*/
-@media(max-width:450px){
-
+@media (max-width: 991px) {
     html{
-        font-size:55%
-    }
-    .header{
-        padding:2rem;
+        font-size: 55%;
     }
     section{
         padding: 2rem;
-
     }
-} 
-@media(max-width:768px){
+    .home{
+        padding-top: 5rem;
+    }
+}
+@media (max-width: 768px) {
     #menu-btn{
         display: initial;
     }
     .header .nav{
         position: absolute;
-        top:115%;right: 2rem;
-        border-radius: .5rem;
-        box-shadow: var(--box-shadow);
-        width: 30rem;
-        border: var(--border);
+        top: 100%;
+        left: 0;
+        right: 0;
         background: #fff;
-        transform: scale(0);
-        opacity: 0;
-        transform-origin: top right;
-        transition: none;
+        border-top: var(--border);
+        flex-direction: column;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .nav a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        font-size: 2rem;
+        color: #000000;
+        display: block;
+    }
+    .header .nav-link .nvlink:hover{
+        color: #008AB3;
+        font-size: 30px;
     }
     .header .nav.active{
-        transform: scale(1);
-        opacity: 1;
-        transition: .2s ease-out;
-    
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    .header .nav a {
-        font-size: 2rem;
-        display: block;
-        margin: 2.5rem;
-    }
-
-}
-@media(max-width:991px){
-
-    html{
-        font-size:50%
+    .home{
+        padding-top: 7rem;
     }
 }
+
 
 
 ul{
