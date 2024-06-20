@@ -104,6 +104,39 @@ h1.heading{
     justify-content: space-between;
     background: #fff;
 }
+.header .nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.header .nav .dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem 0;
+}
+
+.header .nav .dropdown .dropdown-menu a {
+    color: var(--light-color);
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1.7rem;
+}
+
+.header .nav .dropdown .dropdown-menu a:hover {
+    color: #008AB3;
+}
+
+.header .nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .header .logo{
     font-size: 2.5rem;
     color: #008AB3;
@@ -282,6 +315,12 @@ h1.heading{
 .footer{
     background: var(--black);
 }
+footer .box{
+    margin-left: 10rem;
+}
+p.footer-p{
+    color:#008AB3;
+}
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
@@ -385,6 +424,9 @@ ul{
 .footer-col{
    width: 25%;
    padding: 0 15px;
+}
+a.footer-link{
+    
 }
 .footer-col h4{
   font-size: 18px;

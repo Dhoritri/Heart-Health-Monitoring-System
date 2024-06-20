@@ -18,18 +18,32 @@
   </head>
   <body>
     <header class="header">
-      <a href="#" class="logo"
-        ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
-      >
+      <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
       <div class="nav-link">
-        <nav class="nav">
-          <a href="index.html" class="nvlink">Home</a>
-          <a href="doctors.html" class="nvlink">Doctors</a>
-          <a href="appointment.html" class="nvlink">Appointment</a>
-        </nav>
+          <nav class="nav">
+              <a href="#home" class="nvlink">Home</a>
+              <a href="#services" class="nvlink">Services</a>
+              <a href="#about" class="nvlink">About</a>
+              <div class="dropdown">
+                  <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                  <div class="dropdown-menu">
+                      <a href="medicine.html">Medicine</a>
+                      <a href="recommended.html">Recommendation</a>
+                  </div>
+              </div>
+              <div class="dropdown">
+                  <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                  <div class="dropdown-menu">
+                      <a href="appointment.html">Appointment</a>
+                      <a href="doctors.html">Doctors</a>
+                      <a href="book.html">Bed Facility</a>
+                  </div>
+              </div>
+              <a href="login.html"><button class="login">LogIn</button></a>
+          </nav>
       </div>
       <div id="menu-btn" class="fas fa-bars"></div>
-    </header>
+  </header>
     <div class="formbold-main-wrapper">
       <div class="formbold-form-wrapper">
         <form action="https://formbold.com/s/FORM_ID" method="POST">
@@ -295,6 +309,39 @@
         </form>
       </div>
     </div>
+    <script>
+      let menu = document.querySelector('#menu-btn');
+      let nav = document.querySelector('.nav');
+      let dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+      menu.onclick = () => {
+          menu.classList.toggle('fa-times');
+          nav.classList.toggle('active');
+      };
+  
+      window.onscroll = () => {
+          menu.classList.remove('fa-times');
+          nav.classList.remove('active');
+      };
+  
+      // Close dropdowns on click outside
+      document.addEventListener('click', function(event) {
+          let isClickInside = nav.contains(event.target);
+          if (!isClickInside) {
+              menu.classList.remove('fa-times');
+              nav.classList.remove('active');
+          }
+      });
+  
+      // Toggle dropdown on mobile
+      dropdownToggles.forEach(toggle => {
+          toggle.onclick = (event) => {
+              event.preventDefault();
+              let dropdownMenu = toggle.nextElementSibling;
+              dropdownMenu.classList.toggle('active');
+          };
+      });
+  </script>
     <script src="/js/style.js"></script>
   </body>
 </html>

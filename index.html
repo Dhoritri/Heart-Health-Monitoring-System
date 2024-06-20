@@ -9,26 +9,34 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-
 <header class="header">
-
     <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
     <div class="nav-link">
         <nav class="nav">
-        <a href="#home" class="nvlink">Home</a>
-        <a href="#services" class="nvlink">Services</a>
-        <a href="#about" class="nvlink">About</a>
-        <a href="doctors.html" class="nvlink">Doctors</a>
-        <a href="appointment.html" class="nvlink">Appointment</a>
-        <a href="login.html"><button class="login">LogIn</button></a>
-        
-
+            <a href="#home" class="nvlink">Home</a>
+            <a href="#services" class="nvlink">Services</a>
+            <a href="#about" class="nvlink">About</a>
+            <div class="dropdown">
+                <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                <div class="dropdown-menu">
+                    <a href="medicine.html">Medicine</a>
+                    <a href="recommended.html">Recommendation</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                <div class="dropdown-menu">
+                    <a href="appointment.html">Appointment</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="book.html">Bed Facility</a>
+                </div>
+            </div>
+            <a href="login.html"><button class="login">LogIn</button></a>
         </nav>
     </div>
     <div id="menu-btn" class="fas fa-bars"></div>
 </header>
 <section class="home" id="home">
-
     <div class="image">
         <img src="/images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif" alt="">
     </div>
@@ -38,10 +46,8 @@
                 <p class="text">Get the best medical care from our expert doctors</p>
             </div>        
         <a href="#" class="btn contact-btn">Contact Us<span class="fas fa-chevron-right"></span></a>
-
     </div>
 </section>
-
 <section class="icons-container">
     <div class="icons">
         <i class="fas fa-user-md"></i>
@@ -63,10 +69,8 @@
         <h3>80+</h3>
         <p>Available Hospitals</p>
     </div>
-       
 </section>
 <section class="services" id="services">
-
     <h1 class="heading">our <span>services</span></h1>
     <div class="box-container">
         <div class="box">
@@ -91,7 +95,7 @@
             <i class="fas fa-procedures"></i>
                 <h3>Bed Facility</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <a href="#" class="btn">Learn mores <span class="fas fa-chevron-right"></span></a>      
+                <a href="book.html" class="btn">Learn mores <span class="fas fa-chevron-right"></span></a>      
         </div>
         <div class="box">
             <i class="fas fa-heartbeat"></i>
@@ -100,11 +104,7 @@
                 <a href="/recommended.html" class="btn">Learn mores <span class="fas fa-chevron-right"></span></a>    
         </div>
     </div>
-
-
-
 </section>
-
 <section class="about" id="about">
     <h1 class="heading"><span>about</span> us </h1>
     <div class="row">
@@ -115,61 +115,76 @@
             <h3>We Take Care Of Healthy Life</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                  Porro iusto esse iste numquam provident perspiciatis, laudantium molestias? 
-                 Dolorem culpa iusto consequuntur tenetur ipsam, totam quos. Sapiente reiciendis quidem iste sed!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-                <a href="#" class="btn">Learn More<span class="fas fa-chevron-right"></span></a>
-        
+                 Doloribus error voluptate placeat magni possimus dolorum sapiente. 
+                 Assumenda vero facere sunt accusantium!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non facilis neque, enim nemo eveniet incidunt tempora veritatis. Doloribus maxime placeat nihil sed id eius porro accusantium cupiditate, velit asperiores tenetur?</p>
+            <a href="#" class="btn">Learn more <span class="fas fa-chevron-right"></span></a>
         </div>
-
-
     </div>
-
 </section>
-
 <footer class="footer">
-    <div class="container">
-     <div class="row">
-       <div class="footer-col">
-         <h4>company</h4>
-         <ul>
-           <li><a href="#">about us</a></li>
-           <li><a href="#">our services</a></li>
-           <li><a href="#">privacy policy</a></li>
-           <li><a href="#">affiliate program</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>get help</h4>
-         <ul>
-           <li><a href="#">FAQ</a></li>
-           <li><a href="#">shipping</a></li>
-           <li><a href="#">returns</a></li>
-           <li><a href="#">order status</a></li>
-           <li><a href="#">payment options</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>online Services</h4>
-         <ul>
-           <li><a href="#">Appointment</a></li>
-           <li><a href="#">Doctors</a></li>
-           <li><a href="#">Diets</a></li>
-           <li><a href="#">Reports</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>follow us</h4>
-         <div class="social-links">
-           <a href="#"><i class="fab fa-facebook-f"></i></a>
-           <a href="#"><i class="fab fa-twitter"></i></a>
-           <a href="#"><i class="fab fa-instagram"></i></a>
-           <a href="#"><i class="fab fa-linkedin-in"></i></a>
-         </div>
-       </div>
-     </div>
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#services" class="footer-link">Services</a>
+            <a href="#about" class="footer-link">About</a>
+        </div>
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="#" class="footer-link">Ask Questions</a>
+            <a href="#" class="footer-link">Book Appointment</a>
+            <a href="#" class="footer-link">Send Feedback</a>
+            <a href="#" class="footer-link">Doctors</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <p class="footer-p"><i class="fas fa-phone"></i> +345-8990-445 </p>
+            <p class="footer-p"><i class="fas fa-phone"></i> +452-2887-377 </p>
+            <p class="footer-p"><i class="fas fa-envelope"></i> health@healthcare.com </p>
+            <p class="footer-p"><i class="fas fa-map-marker-alt"></i> Lucknow,India - 226021</p>
+        </div>
+        <div class="box">
+            <h3>Follow Us</h3>
+            <a href="#" class="footer-link"><i class="fab fa-facebook"></i>Facebook</a>
+            <a href="#" class="footer-link"><i class="fab fa-twitter"></i>Twitter</a>
+            <a href="#" class="footer-link"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="#" class="footer-link"><i class="fab fa-instagram"></i>Instagram</a>
+        </div>
     </div>
- </footer>
+</footer>
+<script>
+    let menu = document.querySelector('#menu-btn');
+    let nav = document.querySelector('.nav');
+    let dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-    <script src="/js/style.js"></script>
+    menu.onclick = () => {
+        menu.classList.toggle('fa-times');
+        nav.classList.toggle('active');
+    };
+
+    window.onscroll = () => {
+        menu.classList.remove('fa-times');
+        nav.classList.remove('active');
+    };
+
+    // Close dropdowns on click outside
+    document.addEventListener('click', function(event) {
+        let isClickInside = nav.contains(event.target);
+        if (!isClickInside) {
+            menu.classList.remove('fa-times');
+            nav.classList.remove('active');
+        }
+    });
+
+    // Toggle dropdown on mobile
+    dropdownToggles.forEach(toggle => {
+        toggle.onclick = (event) => {
+            event.preventDefault();
+            let dropdownMenu = toggle.nextElementSibling;
+            dropdownMenu.classList.toggle('active');
+        };
+    });
+</script>
 </body>
 </html>
