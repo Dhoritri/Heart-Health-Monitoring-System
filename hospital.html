@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals by City</title>
+    <link rel="stylesheet" href="/css/hospital.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+        <div class="nav-link">
+            <nav class="nav">
+                <a href="#index.html" class="nvlink">Home</a>
+                <a href="doctors.html" class="nvlink">Doctors</a>
+                <a href="medicine.html" class="nvlink">Medicines</a>
+                <a href="appointment.html" class="nvlink">Appointment</a>
+            </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <h1 class="citySel">Hospitals by City</h1>
+    <div class="city-selector">
+        <label for="city" >Select a city:</label>
+        <select id="city" onchange="showHospitals()">
+            <option value="">--Select a city--</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Chattogram">Chattogram</option>
+            <option value="Khulna">Khulna</option>
+            <option value="Rajshahi">Rajshahi</option>
+            <option value="Sylhet">Sylhet</option>
+            <option value="Barishal">Barishal</option>
+            <option value="Rangpur">Rangpur</option>
+        </select>
+    </div>
+    <div id="hospitals"></div>
+    <div class="content">
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online Services</h4>
+                    <ul>
+                        <li><a href="#">Appointment</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Diets</a></li>
+                        <li><a href="#">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer></div>   
+    <script src="/js/hospital.js"></script>
+</body>
+</html>
