@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Analytics Dashboard</title>
+    <link rel="stylesheet" href="/css/doctorAnal.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+            <div class="nav-link">
+                <nav class="nav">
+                    <a href="index.html" class="nvlink">Home</a>
+                    <a href="doctors.html" class="nvlink">Doctors</a>
+                    <a href="appointment.html" class="nvlink">Appointment</a>
+                    <a href="login.html"><button class="login">LogIn</button></a>
+                </nav>
+            </div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </header>
+        <div class="headers">
+            <h1>Doctor Analytics Dashboard</h1>
+            <h2>Analyzing Doctors Based on Price and Experience</h2>
+        </div>
+        <div class="filters">
+            <label for="specialization">Specialization:</label>
+            <select id="specialization">
+                <option value="all">All</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Orthopedics">Orthopedics</option>
+            </select>
+            <label for="price-range">Price Range:</label>
+            <input type="range" id="price-range" min="0" max="500" step="50">
+            <span id="price-range-value">0 - 500</span>
+            <label for="experience-range">Years of Experience:</label>
+            <input type="range" id="experience-range" min="0" max="30" step="5">
+            <span id="experience-range-value">0 - 30</span>
+        </div>
+        <div class="overview">
+            <div>Total Number of Doctors: <span id="total-doctors">4</span></div>
+            <div>Average Price: <span id="average-price">225</span></div>
+            <div>Average Years of Experience: <span id="average-experience">12.5</span></div>
+        </div>
+        <div class="graphs">
+            <div id="price-bar-chart"></div>
+            <div id="experience-histogram"></div>
+            <div id="price-vs-experience-scatter"></div>
+        </div>
+        <div class="tables">
+            <h3>Doctor Details</h3>
+            <table id="doctor-details">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Specialization</th>
+                        <th>Price</th>
+                        <th>Years of Experience</th>
+                        <th>Rating</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dr. A</td>
+                        <td>Cardiology</td>
+                        <td>200</td>
+                        <td>10</td>
+                        <td>4.5</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. B</td>
+                        <td>Neurology</td>
+                        <td>150</td>
+                        <td>5</td>
+                        <td>4.0</td>
+                        <td>Los Angeles</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. C</td>
+                        <td>Pediatrics</td>
+                        <td>300</td>
+                        <td>20</td>
+                        <td>4.8</td>
+                        <td>Chicago</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. D</td>
+                        <td>Orthopedics</td>
+                        <td>250</td>
+                        <td>15</td>
+                        <td>4.6</td>
+                        <td>Houston</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/js/doctorAnal.js"></script>
+</body>
+</html>
