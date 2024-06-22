@@ -412,6 +412,29 @@ p.footer-p{
     }
 }
 
+/*typewriter animation*/
+.typewriter{ display: inline-block; }
+
+.text{
+    font-size:5em;
+    letter-spacing:2px;
+    border-right:2px solid;/*border-right:2px solid; for remove that cursor*/
+    width: 100%;
+    white-space:nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(18),
+        cursor 0.3s step-end infinite alternate;
+}
+@keyframes cursor{
+    50%{ border-color: transparent}
+}
+
+@keyframes typing{
+    from{width:0}
+}
+/*typewriter animation*/
+
 
 
 ul{
