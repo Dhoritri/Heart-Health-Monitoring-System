@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Registration Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/patientchart.css">
+</head>
+<body>
+        <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+        <div class="nav-link">
+            <nav class="nav">
+                <a href="index.html" class="nvlink">Home</a>
+                <a href="doctors.html" class="nvlink">Doctors</a>
+                <a href="appointment.html" class="nvlink">Appointment</a>
+            </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <div class="charts-container">
+        <div class="container">
+            <div class="title">Patient Marital Status</div>
+            <canvas id="maritalStatusChart"></canvas>
+        </div>
+        <div class="container">
+            <div class="title">Patient Age Distribution</div>
+            <canvas id="ageDistributionChart"></canvas>
+        </div>
+        <div class="container">
+            <div class="title">Patient Gender</div>
+            <canvas id="genderChart"></canvas>
+        </div>
+    </div>
+<script src="/js/patientChart.js"></script>
+</body>
+</html>

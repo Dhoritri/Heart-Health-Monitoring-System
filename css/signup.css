@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +9,19 @@
 
 .container {
     position: relative;
-    max-width: 700px;
+    max-width: 100%;
     width: 100%;
     background-color: #fff;
-    padding: 25px ;
+    padding: 25px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    max-height: 90vh; /* Adjust the height to ensure it fits within the viewport */
 }
-
+form {
+    max-height: 100%;
+    overflow-y: auto;
+}
 .container .title {
     font-size: 25px;
     font-weight: 500;
@@ -37,7 +41,7 @@
 
 form .user-details .input-box {
     width: 100%;
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 form .input-box span.details {
@@ -57,20 +61,27 @@ form .input-box span.details {
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 0 15px;
-  }
+}
+
 .input-box input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 /**coloumn**/
 .user-details .column {
     display: flex;
     column-gap: 15px;
-  }
+}
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
     border-color: #008AB3;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .category label {
@@ -94,7 +105,7 @@ form .input-box span.details {
     margin-right: 5px;
 }
 
-.category input[type="radio"]:checked+.dot::after {
+.category input[type="radio"]:checked + .dot::after {
     content: "";
     position: absolute;
     top: 2px;
@@ -115,13 +126,6 @@ form .input-box span.details {
         flex-direction: column;
     }
 }
-
-/**
-.user-details .column {
-    display: flex;
-    column-gap:20px;
-  }
-**/
 
 /** geender selection **/
 .gender-selection {
@@ -168,14 +172,6 @@ form .input-box span.details {
     background-color: transparent;
     transition: background-color 0.3s ease;
 }
-
-/**
-.gender-selection input[type="radio"]:checked + .dot::after {
-    background-color: #fff;
-}
-**/  
-/**gender selection end**/  
-
 
 /** marital status-selection **/
 .marital-status-selection {
@@ -232,7 +228,7 @@ form .input-box span.details {
 }
 
 /*new button*/
-.button{
+.button {
     border: none;
     font-size: 16px;
     color: #ffffff;
@@ -244,8 +240,9 @@ form .input-box span.details {
     transition: all 0.3s ease;
     text-align: center;
 }
-.button:hover{
-    transform: scale(1.1);  
+
+.button:hover {
+    transform: scale(1.1);
     background: rgb(0, 129, 189);
 }
 
@@ -258,10 +255,11 @@ form .input-box span.details {
     color: #707070;
     font-size: 1rem;
 }
-/**bloodtype**/
+
+/**background**/
 .background {
-    background: linear-gradient(rgba(0, 66, 87, 0.13), rgba(0, 52, 61, 0.342)), 
-                url('../images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif');
+    background: linear-gradient(rgba(0, 66, 87, 0.13), rgba(0, 52, 61, 0.342)),
+        url('../images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -289,7 +287,9 @@ form .input-box span.details {
 }
 
 .wrapper {
-    height: 1000;
+
+    max-height: 100vh;
+    overflow-y: auto;
     width: 700px;
     background: rgba(255, 255, 255, 1);
     border-radius: 15px;
@@ -394,7 +394,7 @@ form .field input[type="submit"] {
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    background: linear-gradient(-135deg,  #008AB3, #008AB3);
+    background: linear-gradient(-135deg, #008AB3, #008AB3);
     transition: all 0.3s ease;
 }
 
@@ -430,7 +430,7 @@ form .login-link a:hover {
 
 @media(max-width: 584px) {
     .container {
-        max-width: 100%;
+        padding: 15px;
     }
 
     form .user-details .input-box {
@@ -444,7 +444,7 @@ form .login-link a:hover {
 
     .content form .user-details {
         max-height: 300px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .user-details::-webkit-scrollbar {
@@ -457,32 +457,35 @@ form .login-link a:hover {
         flex-direction: column;
     }
 }
-.header .logo{
+
+.header .logo {
     font-size: 2.5rem;
     color: #008AB3;
 }
-.header .logo{
+
+.header .logo {
     color: #E94A2E;
 }
-.brand{
+
+.brand {
     display: flex;
     gap: 10px;
     align-items: center;
-    
 }
-.brand i{
+
+.brand i {
     color: red;
 }
-.brand a{
+
+.brand a {
     text-decoration: none;
 }
-.curs{
+
+.curs {
     font-style: italic;
     color: red;
-
 }
 
-.brand span{
+.brand span {
     color: #fff;
-    
 }
