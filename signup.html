@@ -146,11 +146,32 @@
                     </div>
                         
                </div>
-                <div class="button"><span>Register</span></a></div>
+                <div class="button">
+                    <i class="fa-solid circle-notch icon spinner"></i>
+                    <span class="btn-text" user-selcect="none">Register</span>
+                    <!--<span>Register</span>-->
+                </div>
+                <script>
+                    let btn = document.querySelector(".button"),
+                        spinIcon = document.querySelector(".spinner"),
+                        btnText = document.querySelector(".btn-text");
+                    btn.addEventListener("click", () => {
+                        btn.style.cursor = "wait";
+                        btn.classList.add("checked");
+                        spinIcon.classList.add("spin");
+                        btnText.textContent = "Loading";
+                    setTimeout(() => {
+                        btn.style.pointerEvents = "none";
+                        spinIcon.classList.replace("spinner", "check");
+                        spinIcon.classList.replace("circle-notch", "fa-check");
+                        btnText.textContent = "Done";
+                    }, 1200 ) //1s = 1000ms
+                    });
+                </script>
                     
-                <!--<div class="button">
-                    <input type="submit" value="Register">
-                </div>-->
+                    <!--<div class="button">
+                        <input type="submit" value="Register">
+                    </div>-->
                 <div class="login-link">
                     <a href="login.html">Back to Login</a>
                 </div>
