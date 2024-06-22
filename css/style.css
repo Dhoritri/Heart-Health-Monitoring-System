@@ -220,6 +220,12 @@ h1.heading{
     text-align: center;
     padding: 2.5rem;
 }
+
+.icons-container .icons:hover{
+    /*transform:  scale(0.9);*/
+    transform: translateY(-15px);
+}
+
 .icons-container .icons i{
     font-size: 4.5rem;
     color: var(--cyan);
@@ -251,6 +257,12 @@ h1.heading{
     flex-direction: column;
     justify-content: space-between;
 }
+
+.services .box-container .box:hover{
+    /*transform:  scale(0.9);*/
+    transform: translateY(-15px);
+}
+
 .services .box-container .box i{
     color: var(--cyan);
     font-size: 5rem;
