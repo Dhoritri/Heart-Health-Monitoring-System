@@ -40,72 +40,202 @@ const hospitals = {
         {
             name: "Chattogram Metropolitan Hospital",
             address: "Panchlaish, Chattogram",
-            img: "path/to/metropolitan-hospital.jpg"
+            img: "/images/chattogram metropolitan hospital.jpg"
         },
         {
             name: "Chattogram Medical College Hospital",
             address: "K.B. Fazlul Kader Road, Chattogram",
-            img: "path/to/medical-college.jpg"
+            img: "/images/Chattogram Medical College Hospital.jpg"
         },
         {
-            name: "Royal Hospital and Research Center",
-            address: "OR Nizam Road, Chattogram",
-            img: "path/to/royal-hospital.jpg"
+            name: "Chittagong General Hospital",
+            address: "Andarkilla Rd, Chattogram 4000",
+            img: "/images/Chittagong General Hospital.jpg"
+        },
+        {
+            name: "Royal Hospital (Pvt.) Limited",
+            address: "O.R. Nizam Rd, Chattogram 4001",
+            img: "/images/Royal Hospital (Pvt.) Limited.jpg"
+        },
+        {
+            name: "Royal Hospital (Pvt.) Limited",
+            address: "O.R. Nizam Rd, Chattogram 4001",
+            img: "/images/Royal Hospital (Pvt.) Limited.jpg"
+        },
+        {
+            name: "Royal Hospital (Pvt.) Limited",
+            address: "O.R. Nizam Rd, Chattogram 4001",
+            img: "/images/Royal Hospital (Pvt.) Limited.jpg"
         }
     ],
     "Khulna": [
         {
             name: "Khulna Medical College Hospital",
             address: "Shamsur Rahman Road, Khulna",
-            img: "path/to/khulna-medical.jpg"
+            img: "/images/Khulna Medical College Hospital.jpg"
         },
         {
             name: "Gazi Medical College Hospital",
             address: "A. Hamid Road, Khulna",
-            img: "path/to/gazi-medical.jpg"
-        }
-    ],
-    "Rajshahi": [
-        {
-            name: "Rajshahi Medical College Hospital",
-            address: "Medical College Road, Rajshahi",
-            img: "path/to/rajshahi-medical.jpg"
+            img: "/images/Gazi Medical College Hospital.jpg"
         },
         {
-            name: "Islami Bank Medical College Hospital",
-            address: "Nawdapara, Rajshahi",
-            img: "path/to/islami-bank-medical.jpg"
+            name: "Khulna City Medical College Hospital",
+            address: " 25, 26 KDA Ave, Khulna 9100",
+            img: "/images/Khulna City Medical College Hospital.jpg"
+        },
+        {
+            name: "Khanjahan Ali Hospital",
+            address: "H3 KDA Ave, Khulna 9100",
+            img: "/images/Khanjahan Ali Hospital.jpg"
         }
+
+
+    ],
+    "Rajshahi": [        
+        {
+            name: "Rajshahi Metropolitan Hospital",
+            address: " C & B More, Greater Rd, Rajshahi 6000",
+            img: "/images/Rajshahi Metropolitan Hospital.jpg"
+        },
+        {
+            name: "Kaisar Memorial Hospital",
+            address: "EIB Compond, 24/2 Cantonment Rd, Rajshahi 620",
+            img: "/images/Kaisar Memorial Hospital.jpg"
+        },
+        {
+            name: "Amana Hospital Ltd.",
+            address: " Jhoutala More, Laxmipur, Rajshahi",
+            img: "/images/Amana Hospital Ltd..jpg"
+        },
+        {
+            name: "Motherland Hospital",
+            address: "Ibrahim Plaza, Lakshmipur",
+            img: "/images/Motherland Hospital.jpg"
+        },
+        {
+            name: "Islami Bank Medical College Hospital ",
+            address: "Rajshahi City Bypass, Rajshahi 6203",
+            img: "/images/Islami Bank Medical College Hospital.jpg"
+        }
+        
     ],
     "Sylhet": [
         {
-            name: "Sylhet MAG Osmani Medical College Hospital",
-            address: "East Mirabazar, Sylhet",
-            img: "path/to/osmani-medical.jpg"
+            name: "Oasis Hospital Sylhet",
+            address: "Subhanighat, Bishwa Rd, Sylhet 3100",
+            img: "/images/Oasis Hospital Sylhet.jpg"
+        },
+        {
+            name: "Queen's Hospital",
+            address: "Sylhet 3100",
+            img: "/images/Queen's Hospital.jpeg"
         },
         {
             name: "Al Haramain Hospital",
-            address: "Dargah Gate, Sylhet",
-            img: "path/to/al-haramain.jpg"
+            address: "Sylhet, Sylhet Division, Sylhet 3100",
+            img: "/images/Al Haramain Hospital.jpg"
+        },
+        {
+            name: "POPULAR MEDICAL CENTRE AND HOSPITAL SYLHET",
+            address: "Bishwa Rd, Mirabazar-Subhanighat Rd, Sylhet 3100",
+            img: "/images/POPULAR MEDICAL CENTRE AND HOSPITAL SYLHET.jpg"
+        },
+        {
+            name: "Sylhet Imperial Hospital",
+            address: "Bongobir, Naiorpul, 31000",
+            img: "/images/Sylhet Imperial Hospital.jpg"
+        },
+        {
+            name: "Sylhet Sahid Shamsuddin Ahmed Hospital",
+            address: " Medical College Rd, Sylhet",
+            img: "/images/Sylhet Sahid Shamsuddin Ahmed Hospital.jpg"
         }
     ],
     "Barishal": [
         {
-            name: "Sher-e-Bangla Medical College Hospital",
-            address: "Band Road, Barishal",
-            img: "path/to/sher-e-bangla.jpg"
+            name: "Arif Memorial Hospital",
+            address: "Arif Memorial Hospital",
+            img: "/images/Arif Memorial Hospital.jpg"
+        },
+        {
+            name: "Islami Bank Hospital",
+            address: " Barishal 8200t",
+            img: "/images/Islami Bank Hospital.jpg"
+        },
+        {
+            name: "Barishal General Hospital",
+            address: "Hospital Rd, Barishal",
+            img: "/images/Barishal General Hospital.jpg"
+        },
+        {
+            name: "South Apollo Medical College & Hospital",
+            address: "South Apollo Medical College & Hospital",
+            img: "/images/South Apollo Medical College & Hospital.jpg"
+        },
+        {
+            name: "Sher-E-Bangla Medical College Hospital",
+            address: " Band Rd, Barishal 8200",
+            img: "/images/Sher-E-Bangla Medical College Hospital.jpeg"
+        },
+        {
+            name: "Royal City Hospital",
+            address: " Brown Compound Rd, Barishal 8200",
+            img: "/images/Royal City Hospital.jpg"
+        },
+        {
+            name: "Red Crescent Hospital",
+            address: " Amanatganj Rd, Barishal",
+            img: "/images/Red Crescent Hospital.jpg"
         }
     ],
     "Rangpur": [
         {
-            name: "Rangpur Medical College Hospital",
-            address: "Dhap, Rangpur",
-            img: "path/to/rangpur-medical.jpg"
+            name: "Rangpur Medical College and Hospital",
+            address: "Rangpur- Dinajpur Highway, Cantt, Near Central Jail, Rangpur 5400",
+            img: "/images/Rangpur Medical College and Hospital.jpg"
         },
         {
-            name: "Prime Medical College Hospital",
-            address: "Pirgacha Road, Rangpur",
-            img: "path/to/prime-medical.jpg"
+            name: "Rangpur Central Hospital",
+            address: "Rangpur - Dinajpur Hwy, Rangpur 5400",
+            img: "/images/Rangpur Central Hospital.jpg"
+        },
+        {
+            name: "Kings Hospital Rangpur",
+            address: "Kings Hospital Rangpur",
+            img: "/images/Kings Hospital Rangpur.jpg"
+        },
+        {
+            name: "Day-Night Hospital",
+            address: "9 Dhaap Road, Rangpur 5400",
+            img: "/images/Day-Night Hospital.jpg"
+        },
+        {
+            name: "Good Health Hospital",
+            address: "Dhap Road, Rangpur 5400",
+            img: "/images/Good Health Hospital.jpg"
+        }
+    ],
+    "Mymensingh": [
+        {
+            name: "Sodesh Hospital",
+            address: "298/2, Mymensingh 2200",
+            img: "/images/Sodesh Hospital.jpg"
+        },
+        {
+            name: "Liberty Hospital",
+            address: "1 Mymensingh - Bhairab Rd, Mymensingh 2200",
+            img: "/images/Liberty Hospital.jpg"
+        },
+        {
+            name: "Delta Health Care",
+            address: " Opposite Charpara Medical College Gate, Charpara Rd, Mymensingh 2200",
+            img: "/images/Delta Health Care.jpg"
+        },
+        {
+            name: "Mymensingh gov Medical Hospital",
+            address: " Charpara Rd, Mymensingh 2200",
+            img: "/images/Mymensingh gov Medical Hospital.jpg"
         }
     ]
 };
@@ -128,3 +258,4 @@ function showHospitals() {
         });
     }
 }
+
