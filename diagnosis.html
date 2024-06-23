@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Diagnosis Data</title>
+    <link rel="stylesheet" href="/css/diagnosis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+        <div class="nav-link">
+            <nav class="nav">
+                <a href="index.html" class="nvlink">Home</a>
+                <div class="dropdown">
+                    <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                    <div class="dropdown-menu">
+                        <a href="medicine.html">Medicine</a>
+                        <a href="recommended.html">Recommendation</a>
+                        <a href="hospital.html">Hospital</a>
+                      </div>
+                </div>
+                <div class="dropdown">
+                    <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                    <div class="dropdown-menu">
+                        <a href="appointment.html">Appointment</a>
+                        <a href="doctors.html">Doctors</a>
+                        <a href="book.html">Bed Facility</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <main>
+        <h1>Patient Diagnosis Data</h1>
+        <div class="controls">
+            <label for="chartType">Select Diagnosis:</label>
+            <select id="chartType">
+                <option value="hypertension">Hypertension</option>
+                <option value="cad">Coronary Artery Disease</option>
+                <option value="heartFailure">Heart Failure</option>
+                <option value="arrhythmia">Arrhythmia</option>
+                <option value="valvularHeartDisease">Valvular Heart Disease</option>
+                <option value="congenitalHeartDisease">Congenital Heart Disease</option>
+                <option value="cardiomyopathy">Cardiomyopathy</option>
+                <option value="pericarditis">Pericarditis</option>
+                <option value="endocarditis">Endocarditis</option>
+                <option value="pulmonaryHypertension">Pulmonary Hypertension</option>
+            </select>
+        </div>
+        <section id="chartSection">
+            <canvas id="diagnosisChart"></canvas>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online Services</h4>
+                    <ul>
+                        <li><a href="#">Appointment</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Diets</a></li>
+                        <li><a href="#">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/diagnosis.js"></script>
+</body>
+</html>
