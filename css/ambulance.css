@@ -204,7 +204,7 @@ html{
         display: block;
     }
     .header .nav-link .nvlink:hover{
-        color: #008AB3;
+        color: #7fc8df;
         font-size: 30px;
     }
     .header .nav.active{
@@ -237,16 +237,37 @@ ul{
 h2{
     color: var(--cyan);
 }
+.et_pb_text_inner {
+    text-align: left;
+}
 
 .et_pb_row_1.et_pb_row, .et_pb_row_2.et_pb_row, .et_pb_row_3.et_pb_row, .et_pb_row_4.et_pb_row {
-  padding-right: 25px !important;
-  padding-left: 25px !important;
-  margin-top: 30px !important;
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+  margin-top: 50px !important;
   padding-right: 25px;
   padding-left: 25px;
 }
+/*hover effect*/
+.et_pb_row_2:hover {
+    transform: scale(0.92);
+    background: rgb(242, 245, 247);
+}
+.et_pb_row_3:hover {
+    transform: scale(0.92);
+    background: #cee0f5;
+}
+.et_pb_row_4:hover {
+    transform: scale(0.92);
+    background: rgb(242, 245, 247);
+}
+/*hover effect*/
+.et_pb_row_3.et_pb_row{
+    border-radius: 10px 10px 10px 10px; 
+}
+
 .et_pb_row_2, .et_pb_row_4 {
-  background-color: #F9EDED;
+  background-color: #cee0f5;
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
   transition: transform 300ms ease 0ms;
@@ -268,8 +289,9 @@ h2{
   background-position: 50%;
   background-repeat: no-repeat;
 }
+
 .et_pb_row {
-  width: 80%;
+  width: 90%;
   max-width: 1080px;
   margin: auto;
     margin-top: auto;
@@ -277,7 +299,7 @@ h2{
 }
 
 .contacts {
-    background-color: #ffffff;
+    background-color: #fcfcfc;
     padding: 40px 0;
     border: none;
 }
@@ -292,8 +314,9 @@ h2{
     text-align: center;
     font-size: 28px;
     margin-bottom: 30px;
-    color: #333;
+    color: #041570;
 }
+
 
 .contacts .contact-info {
     display: flex;
@@ -301,6 +324,7 @@ h2{
     justify-content: center;
     gap: 20px;
 }
+
 
 .contacts .city-contact,
 .contacts .email-contact {
@@ -313,6 +337,16 @@ h2{
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.contacts .email-contact:hover {
+    transform: scale(0.92);
+    background: rgb(242, 245, 247);
+}
+.contacts .city-contact:hover {
+    transform: scale(0.92);
+    background: rgb(242, 245, 247);
+}
+
 
 .contacts .city-contact h3,
 .contacts .email-contact h3 {
@@ -335,6 +369,38 @@ h2{
 .contacts .email-contact a:hover {
     text-decoration: underline;
 }
+
+/*fade out animation code*/
+@keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .city-contact {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+  .email-contact{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+
+/*fade out animation code end*/
+
+
+
+
+
+
+
 
 
 .footer{
@@ -410,3 +476,71 @@ h2{
   }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+
+  box-sizing: border-box;
+
+}
+.et_pb_module.et_pb_text_align_left {
+  text-align: left;
+
+}
+.et_pb_text_1, .et_pb_text_2, .et_pb_text_3, .et_pb_text_4 {
+  line-height: 1.4em;
+
+  line-height: 1.4em;
+
+}
+.et_pb_text {
+  word-wrap: break-word;
+
+}
+body, input, textarea, select {
+  font-family: 'Arial',Helvetica,Arial,Lucida,sans-serif;
+
+}
+body, .et_pb_column_1_2 .et_quote_content blockquote cite, .et_pb_column_1_2 .et_link_content a.et_link_main_url, .et_pb_column_1_3 .et_quote_content blockquote cite, .et_pb_column_3_8 .et_quote_content blockquote cite, .et_pb_column_1_4 .et_quote_content blockquote cite, .et_pb_blog_grid .et_quote_content blockquote cite, .et_pb_column_1_3 .et_link_content a.et_link_main_url, .et_pb_column_3_8 .et_link_content a.et_link_main_url, .et_pb_column_1_4 .et_link_content a.et_link_main_url, .et_pb_blog_grid .et_link_content a.et_link_main_url, body .et_pb_bg_layout_light .et_pb_post p, body .et_pb_bg_layout_dark .et_pb_post p {
+  font-size: 18px;
+
+}
+
+body {
+  line-height: 1;
+
+}
+body {
+  --wp--style--global--content-size: 823px;
+
+  --wp--style--global--wide-size: 1080px;
+
+}
+
+
