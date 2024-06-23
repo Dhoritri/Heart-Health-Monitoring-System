@@ -8,19 +8,33 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+        <div class="nav-link">
+            <nav class="nav">
+                <a href="index.html" class="nvlink">Home</a>
+                <div class="dropdown">
+                    <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                    <div class="dropdown-menu">
+                        <a href="medicine.html">Medicine</a>
+                        <a href="recommended.html">Recommendation</a>
+                        <a href="hospital.html">Hospital</a>
+                      </div>
+                </div>
+                <div class="dropdown">
+                    <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                    <div class="dropdown-menu">
+                        <a href="appointment.html">Appointment</a>
+                        <a href="doctors.html">Doctors</a>
+                        <a href="book.html">Bed Facility</a>
+                    </div>
+                </div>
+                <a href="login.html"><button class="login">LogIn</button></a>
+            </nav>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
     <div class="container">
-        <header class="header">
-            <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
-            <div class="nav-link">
-                <nav class="nav">
-                    <a href="index.html" class="nvlink">Home</a>
-                    <a href="doctors.html" class="nvlink">Doctors</a>
-                    <a href="appointment.html" class="nvlink">Appointment</a>
-                    <a href="login.html"><button class="login">LogIn</button></a>
-                </nav>
-            </div>
-            <div id="menu-btn" class="fas fa-bars"></div>
-        </header>
         <div class="headers">
             <h1>Doctor Analytics Dashboard</h1>
             <h2>Analyzing Doctors Based on Price and Experience</h2>

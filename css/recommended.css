@@ -116,6 +116,39 @@ html{
     font-size: 20px;
 }
 
+.header .nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.header .nav .dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem 0;
+}
+
+.header .nav .dropdown .dropdown-menu a {
+    color: var(--light-color);
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1.7rem;
+}
+
+.header .nav .dropdown .dropdown-menu a:hover {
+    color: #008AB3;
+}
+
+.header .nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 #menu-btn{
     font-size: 2.5rem;
     border-radius: .5rem;

@@ -7,20 +7,31 @@
     <link rel="stylesheet" href="/css/medical.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"
-          ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
-        >
-        <div class="nav-link">
-          <nav class="nav">
+  <header class="header">
+    <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+    <div class="nav-link">
+        <nav class="nav">
             <a href="index.html" class="nvlink">Home</a>
-            <a href="doctors.html" class="nvlink">Doctors</a>
-            <a href="appointment.html" class="nvlink">Appointment</a>
-
-          </nav>
-        </div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-      </header>
+            <div class="dropdown">
+                <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                <div class="dropdown-menu">
+                    <a href="medicine.html">Medicine</a>
+                    <a href="recommended.html">Recommendation</a>
+                    <a href="hospital.html">Hospital</a>
+                  </div>
+            </div>
+            <div class="dropdown">
+                <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                <div class="dropdown-menu">
+                    <a href="appointment.html">Appointment</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="book.html">Bed Facility</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>
       <section class="form">
     <div class="form-container">
         <h2>Medical History Form</h2>
