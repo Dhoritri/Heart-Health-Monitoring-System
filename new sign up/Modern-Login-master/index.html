@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <!--Physician signup from-->
+        <div class="form-container sign-up">
+            <form>
+
+                <h1 style="color: #2c5664;">Physician</h1>            
+                <h4><span>Enter your personal details to sign up</span></h4>
+
+                <input type="text" placeholder="First name">
+                <input type="text" placeholder="Last name">
+                <!--Dob-->
+                <p  style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
+                <input type="date" name="dob" placeholder="Enter You Date Of Birth" >  
+                <!--blood group-->                           
+                <div class="select-box">
+                    <select>
+                      <option hidden>Select Blood group</option>
+                      <option>A+</option>..<option>B+</option>
+                      <option>A-</option>..<option>B-</option>
+                      <option>O+</option>..<option>O-</option>
+                      <option>AB+</option>..<option>AB-</option>
+                    </select>
+                </div>
+                <!--gender-->
+                <div class="input-box">                        
+                    <div class="gender-selection">
+                        <label for="male-Physician">
+                        <p style="margin-right: 55px;">Gender</p>
+                         <input type="radio" id="male-Physician" name="gender" value="male-Physician" required>
+                            <span class="dot"></span>
+                            Male
+                        </label>
+                        <label for="female-Physician">
+                            <input type="radio" id="female-Physician" name="gender" value="female-Physician" required>
+                            <span class="dot"></span>
+                            Female
+                        </label>                            
+                    </div> 
+                </div>
+                <!-- Specialization & Years of experience -->
+                <div class="column">
+                    <div class="select-box-box">
+                        <select>
+                        <option hidden>Specialization</option>
+                        <option>Anesthesiology</option>..<option>Cardiology.</option>..<option>Urologist.</option>
+                        <option>Emergency Medicine</option>..<option>Forensic Pathology.</option>..<option>Neurologist.</option>
+                        <option>Orthopedist.</option>..<option>General Surgery.</option>..<option>Gynecology.</option>
+                        <option>Dermatologist</option>..<option>Pathology</option>..<option>Rheumatology</option>
+                        </select>
+                    </div>
+                    <div class="select-box-box">
+                        <select>
+                        <option hidden>Years of experience</option>
+                        <option>01</option>..<option>1.5</option>
+                        <option>02</option>..<option>2.5</option>
+                        <option>03</option>..<option>3.5</option>
+                        <option>04</option>..<option>4.5</option>
+                        <option>05</option>..<option>5.5</option>
+                        <option>06</option>..<option>6.5</option>
+                        <option>07</option>..<option>7.5</option>
+                        <option>08</option>..<option>8.5</option>
+                        <option>09</option>..<option>9.5</option><option>10</option>                      
+                        </select>
+                    </div>
+                </div>
+                <!--email-->
+                <input type="email" placeholder="Email"> 
+                 <!--working time-->               
+                <div class="column">
+                <p style="margin-right: 20px;">Start time</p>
+                  <input
+                    type="time"
+                    name="time"
+                    id="time"
+                    class="formbold-form-input" />
+                <p style="margin-right: 30px;">End time</p>
+                  <input
+                    type="time"
+                    name="time"
+                    id="time"
+                    class="formbold-form-input" />
+                </div>
+                <!--password-->
+                <input type="password" placeholder="Password">
+                <!--certificate-->
+                <p  style="margin-bottom: 1px; margin-right: 300px;">Upload Certificate:</p>
+                <input type="file"  accept="pdf/*"/>
+                
+                <button>S U B M I T </button>
+
+            </form>
+        </div>
+        <!--patient signup from-->
+        <div class="form-container sign-in">
+            <form>
+                <h1 style="color: #2c5664;">Patient</h1>                
+                <h4><span>Enter your personal details to sign up</span></h4>
+
+                <!--name-->
+                <input type="text" placeholder="First name">                
+                <input type="text" placeholder="Last name">  
+                <!--email-->              
+                <input type="email" placeholder="Email">
+                <!--dob-->
+                <p  style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>               
+                <input type="date" name="dob" placeholder="Enter You Date Of Birth" >
+                <!--blood group-->                
+                <div class="select-box">
+                    <select>
+                      <option hidden>Select Blood group</option>
+                      <option>A+</option>
+                      <option>B+</option>
+                      <option>A-</option>
+                      <option>B-</option>
+                      <option>O+</option>
+                      <option>O-</option>
+                      <option>AB+</option>
+                      <option>AB-</option>
+                    </select>
+                </div>
+                <!--occupation-->
+                <input type="text" placeholder="Occupation">
+                <!--passowrd-->
+                <input type="password" placeholder=" password">
+                <!--gender-->
+                <div class="input-box">
+                        
+                    <div class="gender-selection">
+                        <label for="male-Patient">
+                        <p style="margin-right: 55px;">Gender:</p>
+                         <input type="radio" id="male-Patient" name="gender" value="male-Patient" required>
+                            <span class="dot"></span>
+                            Male
+                        </label>
+                        <label for="female-Patient">
+                            <input type="radio" id="female-Patient" name="gender" value="female-Patient" required>
+                            <span class="dot"></span>
+                            Female
+                        </label>                            
+                    </div> 
+
+                </div>
+                <!--phone-->
+                <input type="number" placeholder="Phone number">
+                                                                         
+                <button>S U B M I T</button>
+
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome, Doctor!</h1>
+                    <p>Register with your details to access all our features.
+                         Connect with patients and manage your practice seamlessly.</p>
+                    <button class="hidden" id="login">Sign Up as patient</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, there!</h1>
+                    <p>Join us by registering with your personal details. Gain full access to all our features and stay connected with our community.</p>
+                    <button class="hidden" id="register">Sign Up as Physician</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
