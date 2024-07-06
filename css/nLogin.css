@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    transition: all .2s ease-out;
 }
 
 body{
@@ -52,7 +53,7 @@ body{
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
-    border: 1px solid transparent;
+    border: 2px transparent;
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -65,12 +66,12 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transform: translateY(2px);
   }
-  /*
+  
 .container button:hover {
     background: linear-gradient(-135deg, #2c5664, #4b9db6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-*/
+
 
 
 .container button.hidden{
