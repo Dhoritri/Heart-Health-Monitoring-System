@@ -23,6 +23,7 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
+    
 }
 .heading{
     text-align: center;
@@ -39,7 +40,7 @@ html{
 }
 .btn{
     
-    margin-top: 2rem;
+    margin-top: 9rem;
     padding: .75rem;
     padding-left: 1rem;
     border: var(--border);
@@ -51,6 +52,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 .btn span{
     padding: .7rem 1rem;
@@ -162,22 +164,54 @@ html{
 
 
 .maincontainer {
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
+    width: 30%;
+    margin: auto;
+    padding: 40px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 50px;
-    border-radius: 8px;
+    margin-bottom: 60px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+        --s: 0.11em;   /* the thickness of the line */
+        --c: #2c4bff; /* the color */
+        
+        color: #0000;
+        padding-bottom: var(--s);
+        background: 
+          linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+          linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+        -webkit-background-clip: text,padding-box;
+                background-clip: text,padding-box;
+        transition: 0.5s;
+        display: inline-block;
+      }
+      h1:hover {--_p: 100%}
+      
+      
+      body {
+        text-align: center;
+        
+ 
+      }
+      h1 {
+        font-family: system-ui, sans-serif;
+        font-size: 3rem;
+        cursor: pointer;
+        margin-bottom: 40px;
 }
 
+
+
+
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .form-group label {
@@ -195,21 +229,105 @@ h1 {
     box-sizing: border-box;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-button:hover {
-    background-color: #0056b3;
-}
+/****/
+
+button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 60px;
+    
+    
+   }
+
+   .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(202, 94%, 19%) 0%,
+       hsl(202, 94%, 21%) 8%,
+       hsl(202, 94%, 28%)  92%,
+       hsl(202, 94%, 19%) 100%
+     );
+   }
+   
+   .front {
+    display: block;
+    position: relative;
+    padding: 12px 150px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(0, 8, 8);
+    background: hsl(202, 100%, 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   button:hover {
+    filter: brightness(110%);
+   }
+   
+   button:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+   }
+   
+   button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+   }
+   
+   button:focus:not(:focus-visible) {
+    outline: none;
+   }
+/****/   
 
 .hidden {
     display: none;
@@ -224,52 +342,52 @@ button:hover {
 /* media queries*/
 @media(max-width:450px){
 
-    html{
-        font-size:55%
-    }
-    .header{
-        padding:2rem;
-    }
-    section{
-        padding: 2rem;
+  html{
+      font-size:55%
+  }
+  .header{
+      padding:2rem;
+  }
+  section{
+      padding: 2rem;
 
-    }
+  }
 } 
 @media(max-width:768px){
-    #menu-btn{
-        display: initial;
-    }
-    .header .nav{
-        position: absolute;
-        top:115%;right: 2rem;
-        border-radius: .5rem;
-        box-shadow: var(--box-shadow);
-        width: 30rem;
-        border: var(--border);
-        background: #fff;
-        transform: scale(0);
-        opacity: 0;
-        transform-origin: top right;
-        transition: none;
-    }
-    .header .nav.active{
-        transform: scale(1);
-        opacity: 1;
-        transition: .2s ease-out;
-    
-    }
-    .header .nav a {
-        font-size: 2rem;
-        display: block;
-        margin: 2.5rem;
-    }
+  #menu-btn{
+      display: initial;
+  }
+  .header .nav{
+      position: absolute;
+      top:115%;right: 2rem;
+      border-radius: .5rem;
+      box-shadow: var(--box-shadow);
+      width: 30rem;
+      border: var(--border);
+      background: #fff;
+      transform: scale(0);
+      opacity: 0;
+      transform-origin: top right;
+      transition: none;
+  }
+  .header .nav.active{
+      transform: scale(1);
+      opacity: 1;
+      transition: .2s ease-out;
+  
+  }
+  .header .nav a {
+      font-size: 2rem;
+      display: block;
+      margin: 2.5rem;
+  }
 
 }
 @media(max-width:991px){
 
-    html{
-        font-size:50%
-    }
+  html{
+      font-size:50%
+  }
 }
 
 
@@ -348,3 +466,111 @@ button:hover {
     width: 100%;
 }
 }
+
+
+
+
+
+
+
+/*letter waveing code*/
+.wave-group {
+    position: relative;
+  }
+  
+  .wave-group .input {
+    font-size: 15px;
+    padding: 10px 10px 10px 6px;
+    display: block;
+    width: 450px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+    margin-bottom: 20px; 
+     
+  }
+  
+  .wave-group .input:focus {
+    outline: none;
+  }
+  
+  .wave-group .label {
+    color: #6d6c6c;
+    font-size: 15px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 9px;
+    top: 5px;
+    display: flex;
+     
+  }
+  
+  .wave-group .label-char {
+    transition: 0.3s ease all;
+    transition-delay: calc(var(--index) * .05s);
+  }
+  
+  .wave-group .input:focus ~ label .label-char,
+  .wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #0681b9;
+  }
+  
+  .wave-group .bar {
+    position: relative;
+    display: block;
+    width: 450px;
+    
+  }
+  
+  .wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2.5px;
+    width: 0;
+    bottom: 19px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .wave-group .bar:before {
+    left: 50%;
+  }
+  
+  .wave-group .bar:after {
+    right: 50%;
+  }
+  
+  .wave-group .input:focus ~ .bar:before,
+  .wave-group .input:focus ~ .bar:after {
+    width: 50%;
+  }
+/*letter waveing code*/
+
+
+/*selection box*/
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1.6rem;
+    margin-right: 300px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+  }
+/*selection box*/
+
+
+
+
+
+
+
+
+  
