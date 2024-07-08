@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/css/nLogin.css">
-    
 </head>
-
 <body>
-    <!-- <header>
-    <div class="brand">
-        <a href="index.html" class="logo"
-          ><i class="fa-solid fa-heart-pulse"></i
-          ><span>Heart<span class="curs">C</span>are.</span></a
-        >
-      </div>
-    </header>  -->
-    <div class="container" id="container">   
-    
+    <div class="container" id="container">
         <div class="form-container sign-in">
-            <form>
+            <form action="/php/login.php" method="post">
                 <h1 style="color: #2c5664;">L o g i n</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
@@ -30,7 +18,7 @@
                     <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <div class="wave-group">
-                    <input required="" type="text" class="input">
+                    <input required="" type="text" name="email" class="input">
                     <span class="bar"></span>
                     <label class="label">
                       <span class="label-char" style="--index: 0">U</span>
@@ -44,7 +32,7 @@
                     </label>
                   </div>
                   <div class="wave-group">
-                    <input required="" type="password" class="input">
+                    <input required="" type="password" name="password" class="input">
                     <span class="bar"></span>
                     <label class="label">
                         <span class="label-char" style="--index: 0">P</span>
@@ -57,52 +45,34 @@
                         <span class="label-char" style="--index: 7">d</span>
                     </label>
                   </div>
-                  
                   <div class="checkbox">
                     <input type="checkbox" id="remember-me" />
                     <label for="remember-me">Remember me </label>
-                 
                     <a href="#">Forgot password?</a>
                 </div>
-                <button>login</button>
+                <button type="submit">login</button>
                 <br>
                 <span>
-                    <div class="signup-link"> Not a member? <a style="color: blue; "href="nSign.html">Signup now</a></div>
+                    <div class="signup-link"> Not a member? <a style="color: blue;" href="nSign.html">Signup now</a></div>
                 </span>
             </form>
         </div>
         <div class="toggle-container">
-            
             <div class="toggle">
-                <!--
-                <div class="toggle-panel toggle-left">
-                    <h1>welcome ! </h1>
-                    <p>Experience the best medical care from our team of expert doctors.</p>
-                    
-                    
-                    <button class="hidden" id="login"> Services we offer</button>
-                </div>
-                -->
                 <div class="toggle-panel toggle-right">
-
-                    <h1>welcome ! </h1>
+                    <h1>welcome !</h1>
                     <p>Experience the best medical care from our team of expert doctors.</p>
                     <h3>OUR SERVICES</h3>
                     <p>we have 140+ Doctors At Work .<br>
                         24/7 Ambulance Services . <br>
                         500+ Bed Facility .<br>
-                        80+ Available Hospitals </p> 
-                    <p>If you haven't signed yet, please click the button below. Thanks!</p>                   
-                                        
-                    <button ><a href="nSign.html">Sign  up</a></button>
-                    
-                    
+                        80+ Available Hospitals </p>
+                    <p>If you haven't signed yet, please click the button below. Thanks!</p>
+                    <button><a href="nSign.html">Sign up</a></button>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="/js/nSignup.js"></script>
 </body>
-
 </html>
