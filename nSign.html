@@ -14,19 +14,16 @@
     <div class="container" id="container">
         <!--Physician signup from-->
         <div class="form-container sign-up">
-            <form>
-
+            <form action="php/signup.php" method="post" enctype="multipart/form-data">
                 <h1 style="color: #2c5664;">Physician</h1>            
                 <h4><span>Enter your personal details to sign up</span></h4>
 
-                <input type="text" placeholder="First name">
-                <input type="text" placeholder="Last name">
-                <!--Dob-->
-                <p  style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
-                <input type="date" name="dob" placeholder="Enter You Date Of Birth" >  
-                <!--blood group-->                           
+                <input type="text" name="first_name" placeholder="First name">
+                <input type="text" name="last_name" placeholder="Last name">
+                <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
+                <input type="date" name="dob" placeholder="Enter Your Date Of Birth">  
                 <div class="select-box">
-                    <select>
+                    <select name="blood_group">
                       <option hidden>Select Blood group</option>
                       <option>A+</option>..<option>B+</option>
                       <option>A-</option>..<option>B-</option>
@@ -34,35 +31,33 @@
                       <option>AB+</option>..<option>AB-</option>
                     </select>
                 </div>
-                <!--gender-->
                 <div class="input-box">                        
                     <div class="gender-selection">
                         <label for="male-Physician">
                         <p style="margin-right: 55px;">Gender</p>
-                         <input type="radio" id="male-Physician" name="gender" value="male-Physician" required>
+                         <input type="radio" id="male-Physician" name="gender" value="male" required>
                             <span class="dot"></span>
                             Male
                         </label>
                         <label for="female-Physician">
-                            <input type="radio" id="female-Physician" name="gender" value="female-Physician" required>
+                            <input type="radio" id="female-Physician" name="gender" value="female" required>
                             <span class="dot"></span>
                             Female
                         </label>                            
                     </div> 
                 </div>
-                <!-- Specialization & Years of experience -->
                 <div class="column">
                     <div class="select-box-box">
-                        <select>
+                        <select name="specialization">
                         <option hidden>Specialization</option>
-                        <option>Anesthesiology</option>..<option>Cardiology.</option>..<option>Urologist.</option>
-                        <option>Emergency Medicine</option>..<option>Forensic Pathology.</option>..<option>Neurologist.</option>
-                        <option>Orthopedist.</option>..<option>General Surgery.</option>..<option>Gynecology.</option>
+                        <option>Anesthesiology</option>..<option>Cardiology</option>..<option>Urologist</option>
+                        <option>Emergency Medicine</option>..<option>Forensic Pathology</option>..<option>Neurologist</option>
+                        <option>Orthopedist</option>..<option>General Surgery</option>..<option>Gynecology</option>
                         <option>Dermatologist</option>..<option>Pathology</option>..<option>Rheumatology</option>
                         </select>
                     </div>
                     <div class="select-box-box">
-                        <select>
+                        <select name="experience">
                         <option hidden>Years of experience</option>
                         <option>01</option>..<option>1.5</option>
                         <option>02</option>..<option>2.5</option>
@@ -76,51 +71,35 @@
                         </select>
                     </div>
                 </div>
-                <!--email-->
-                <input type="email" placeholder="Email"> 
-                 <!--working time-->               
+                <input type="email" name="email" placeholder="Email"> 
                 <div class="column">
-                <p style="margin-right: 20px;">Start time</p>
-                  <input
-                    type="time"
-                    name="time"
-                    id="time"
-                    class="formbold-form-input" />
-                <p style="margin-right: 30px;">End time</p>
-                  <input
-                    type="time"
-                    name="time"
-                    id="time"
-                    class="formbold-form-input" />
+                    <p style="margin-right: 20px;">Start time</p>
+                      <input type="time" name="start_time" class="formbold-form-input" />
+                    <p style="margin-right: 30px;">End time</p>
+                      <input type="time" name="end_time" class="formbold-form-input" />
                 </div>
-                <!--password-->
-                <input type="password" placeholder="Password">
-                <!--certificate-->
-                <p  style="margin-bottom: 1px; margin-right: 300px;">Upload Certificate:</p>
-                <input type="file"  accept="pdf/*"/>
+                <input type="password" name="password" placeholder="Password">
+                <p style="margin-bottom: 1px; margin-right: 300px;">Upload Certificate:</p>
+                <input type="file" name="certificate" accept="application/pdf"/>
                 
-                <button>S U B M I T </button>
-                <div class="signup-link"> already a member? <a style="color: blue;"href ="nLogin.html">login page</a></div>
+                <button type="submit">S U B M I T</button>
+                <div class="signup-link"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
 
             </form>
         </div>
+
         <!--patient signup from-->
         <div class="form-container sign-in">
-            <form>
+            <form action="register.php" method="post">
                 <h1 style="color: #2c5664;">Patient</h1>                
                 <h4><span>Enter your personal details to sign up</span></h4>
-
-                <!--name-->
-                <input type="text" placeholder="First name">                
-                <input type="text" placeholder="Last name">  
-                <!--email-->              
-                <input type="email" placeholder="Email">
-                <!--dob-->
-                <p  style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>               
-                <input type="date" name="dob" placeholder="Enter You Date Of Birth" >
-                <!--blood group-->                
+                <input type="text" name="first_name" placeholder="First name">                
+                <input type="text" name="last_name" placeholder="Last name">  
+                <input type="email" name="email" placeholder="Email">
+                <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>               
+                <input type="date" name="dob" placeholder="Enter Your Date Of Birth">
                 <div class="select-box">
-                    <select>
+                    <select name="blood_group">
                       <option hidden>Select Blood group</option>
                       <option>A+</option>
                       <option>B+</option>
@@ -132,33 +111,26 @@
                       <option>AB-</option>
                     </select>
                 </div>
-                <!--occupation-->
-                <input type="text" placeholder="Occupation">
-                <!--passowrd-->
-                <input type="password" placeholder=" password">
-                <!--gender-->
+                <input type="text" name="occupation" placeholder="Occupation">
+                <input type="password" name="password" placeholder="Password">
                 <div class="input-box">
-                        
                     <div class="gender-selection">
                         <label for="male-Patient">
                         <p style="margin-right: 55px;">Gender:</p>
-                         <input type="radio" id="male-Patient" name="gender" value="male-Patient" required>
+                         <input type="radio" id="male-Patient" name="gender" value="male" required>
                             <span class="dot"></span>
                             Male
                         </label>
                         <label for="female-Patient">
-                            <input type="radio" id="female-Patient" name="gender" value="female-Patient" required>
+                            <input type="radio" id="female-Patient" name="gender" value="female" required>
                             <span class="dot"></span>
                             Female
                         </label>                            
                     </div> 
-
                 </div>
-                <!--phone-->
-                <input type="number" placeholder="Phone number">
-                                                                         
-                <button>S U B M I T</button>
-                <div class="signup-link"style="margin-top: 20px;"> already a member? <a style="color: blue;"href="nLogin.html">login page</a></div>
+                <input type="number" name="phone" placeholder="Phone number">                                                                        
+                <button type="submit">S U B M I T</button>
+                <div class="signup-link"style="margin-top: 20px;"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
 
             </form>
         </div>
