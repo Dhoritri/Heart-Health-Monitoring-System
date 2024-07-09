@@ -14,12 +14,13 @@
     <div class="container" id="container">
         <!--Physician signup from-->
         <div class="form-container sign-up">
-            <form action="php/signup.php" method="post" enctype="multipart/form-data">
+            <form action="php/physician.php" method="post" enctype="multipart/form-data">
                 <h1 style="color: #2c5664;">Physician</h1>            
                 <h4><span>Enter your personal details to sign up</span></h4>
 
                 <input type="text" name="first_name" placeholder="First name">
                 <input type="text" name="last_name" placeholder="Last name">
+                <input type="text" name="nid" placeholder="National ID">
                 <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
                 <input type="date" name="dob" placeholder="Enter Your Date Of Birth">  
                 <div class="select-box">
@@ -81,6 +82,7 @@
                 <input type="password" name="password" placeholder="Password">
                 <p style="margin-bottom: 1px; margin-right: 300px;">Upload Certificate:</p>
                 <input type="file" name="certificate" accept="application/pdf"/>
+             
                 
                 <button type="submit">S U B M I T</button>
                 <div class="signup-link"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
@@ -90,11 +92,12 @@
 
         <!--patient signup from-->
         <div class="form-container sign-in">
-            <form action="register.php" method="post">
+            <form action="php/patient.php" method="post">
                 <h1 style="color: #2c5664;">Patient</h1>                
                 <h4><span>Enter your personal details to sign up</span></h4>
                 <input type="text" name="first_name" placeholder="First name">                
                 <input type="text" name="last_name" placeholder="Last name">  
+                <input type="text" name="nid" placeholder="National ID">  
                 <input type="email" name="email" placeholder="Email">
                 <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>               
                 <input type="date" name="dob" placeholder="Enter Your Date Of Birth">
@@ -129,7 +132,7 @@
                     </div> 
                 </div>
                 <input type="number" name="phone" placeholder="Phone number">                                                                        
-                <button type="submit">S U B M I T</button>
+                <button type="submit" value="submit">S U B M I T</button>
                 <div class="signup-link"style="margin-top: 20px;"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
 
             </form>
