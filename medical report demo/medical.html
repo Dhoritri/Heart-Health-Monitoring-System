@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History Form</title>
+    <link rel="stylesheet" href="medical.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
+    <div class="nav-link">
+        <nav class="nav">
+            <a href="index.html" class="nvlink">Home</a>
+            <div class="dropdown">
+                <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
+                <div class="dropdown-menu">
+                    <a href="medicine.html">Medicine</a>
+                    <a href="recommended.html">Recommendation</a>
+                    <a href="hospital.html">Hospital</a>
+                  </div>
+            </div>
+            <div class="dropdown">
+                <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                <div class="dropdown-menu">
+                    <a href="appointment.html">Appointment</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="book.html">Bed Facility</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>
+      <section class="form">
+    <div class="form-container">
+        <h1>Medical History Form</h1>
+        <form action="#" method="post">
+            <div class="wave-group">
+                <input required="" id="phone" type="text" class="input">                
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">P</span>
+                  <span class="label-char" style="--index: 1">h</span>
+                  <span class="label-char" style="--index: 2">o</span>
+                  <span class="label-char" style="--index: 3">n</span>
+                  <span class="label-char" style="--index: 4">e</span>
+                  <span class="label-char" style="--index: 5">_</span>
+                  <span class="label-char" style="--index: 6">n</span>
+                  <span class="label-char" style="--index: 7">u</span>
+                  <span class="label-char" style="--index: 8">m</span>
+                  <span class="label-char" style="--index: 9">b</span>
+                  <span class="label-char" style="--index: 10">e</span>
+                  <span class="label-char" style="--index: 11">r</span>
+                  
+                </label>
+            </div>
+            <div class="select-box">
+                <select>
+                  <option hidden> Medication:</option>
+                  <option value="general">General</option>
+                    <option value="semi-private">Semi-Private</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div class="wave-group">
+                <input required="" id="date" type="date" class="input">                
+                <span class="bar"></span>
+            </div>
+            <div class="select-box">
+                <select>
+                  <option hidden> Surgery:</option>
+                  <option value="general">General</option>
+                    <option value="semi-private">Semi-Private</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div class="wave-group">
+                <input required="" id="phone" type="text" class="input">                
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">M</span>
+                  <span class="label-char" style="--index: 1">e</span>
+                  <span class="label-char" style="--index: 2">d</span>
+                  <span class="label-char" style="--index: 3">i</span>
+                  <span class="label-char" style="--index: 4">c</span>
+                  <span class="label-char" style="--index: 5">a</span>
+                  <span class="label-char" style="--index: 6">l</span>
+                  <span class="label-char" style="--index: 7">_</span>
+                  <span class="label-char" style="--index: 8">n</span>
+                  <span class="label-char" style="--index: 9">o</span>
+                  <span class="label-char" style="--index: 10">t</span>
+                  <span class="label-char" style="--index: 11">e</span>
+                  
+                </label>
+            </div>
+            <div class="select-box">
+                <select>
+                  <option hidden> Diagnose:</option>
+                  <option value="general">General</option>
+                    <option value="semi-private">Semi-Private</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div>
+                <div class="file-upload">
+                    <label for="certificate" class="wave-label">previous diagonoses report :</label>
+                    <input type="file" id="certificate" name="certificate" accept="application/pdf" class="wave-input">
+            </div>
+            
+            <button type="submitMed">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text"> Submit</span>
+            </button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
