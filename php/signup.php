@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+include 'db.php';
 
 $name = $email = $phone = $password = $confirm_password = $type = "";
 
