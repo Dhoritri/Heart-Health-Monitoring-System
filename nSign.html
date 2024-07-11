@@ -15,14 +15,14 @@
         <!--Physician signup from-->
         <div class="form-container sign-up">
             <form action="php/physician.php" method="post" enctype="multipart/form-data">
-                <h1 style="color: #2c5664;">Physician</h1>            
+                <h1 style="color: #2c5664;">Physician</h1>
                 <h4><span>Enter your personal details to sign up</span></h4>
 
                 <input type="text" name="first_name" placeholder="First name">
                 <input type="text" name="last_name" placeholder="Last name">
                 <input type="text" name="nid" placeholder="National ID">
                 <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
-                <input type="date" name="dob" placeholder="Enter Your Date Of Birth">  
+                <input type="date" name="dob" placeholder="Enter Your Date Of Birth">
                 <div class="select-box">
                     <select name="blood_group">
                       <option hidden>Select Blood group</option>
@@ -32,7 +32,7 @@
                       <option>AB+</option>..<option>AB-</option>
                     </select>
                 </div>
-                <div class="input-box">                        
+                <div class="input-box">
                     <div class="gender-selection">
                         <label for="male-Physician">
                         <p style="margin-right: 55px;">Gender</p>
@@ -44,8 +44,8 @@
                             <input type="radio" id="female-Physician" name="gender" value="female" required>
                             <span class="dot"></span>
                             Female
-                        </label>                            
-                    </div> 
+                        </label>
+                    </div>
                 </div>
                 <div class="column">
                     <div class="select-box-box">
@@ -68,11 +68,11 @@
                         <option>06</option>..<option>6.5</option>
                         <option>07</option>..<option>7.5</option>
                         <option>08</option>..<option>8.5</option>
-                        <option>09</option>..<option>9.5</option><option>10</option>                      
+                        <option>09</option>..<option>9.5</option><option>10</option>
                         </select>
                     </div>
                 </div>
-                <input type="email" name="email" placeholder="Email"> 
+                <input type="email" name="email" placeholder="Email">
                 <div class="column">
                     <p style="margin-right: 20px;">Start time</p>
                       <input type="time" name="start_time" class="formbold-form-input" />
@@ -82,8 +82,8 @@
                 <input type="password" name="password" placeholder="Password">
                 <p style="margin-bottom: 1px; margin-right: 300px;">Upload Certificate:</p>
                 <input type="file" name="certificate" accept="application/pdf"/>
-             
-                
+
+
                 <button type="submit">S U B M I T</button>
                 <div class="signup-link"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
 
@@ -93,13 +93,13 @@
         <!--patient signup from-->
         <div class="form-container sign-in">
             <form action="php/patient.php" method="post">
-                <h1 style="color: #2c5664;">Patient</h1>                
+                <h1 style="color: #2c5664;">Patient</h1>
                 <h4><span>Enter your personal details to sign up</span></h4>
-                <input type="text" name="first_name" placeholder="First name">                
-                <input type="text" name="last_name" placeholder="Last name">  
-                <input type="text" name="nid" placeholder="National ID">  
+                <input type="text" name="first_name" placeholder="First name">
+                <input type="text" name="last_name" placeholder="Last name">
+                <input type="text" name="nid" placeholder="National ID">
                 <input type="email" name="email" placeholder="Email">
-                <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>               
+                <p style="margin-bottom: 1px; margin-right: 335px;">Date of birth:</p>
                 <input type="date" name="dob" placeholder="Enter Your Date Of Birth">
                 <div class="select-box">
                     <select name="blood_group">
@@ -128,10 +128,10 @@
                             <input type="radio" id="female-Patient" name="gender" value="female" required>
                             <span class="dot"></span>
                             Female
-                        </label>                            
-                    </div> 
+                        </label>
+                    </div>
                 </div>
-                <input type="number" name="phone" placeholder="Phone number">                                                                        
+                <input type="number" name="phone" placeholder="Phone number">
                 <button type="submit" value="submit">S U B M I T</button>
                 <div class="signup-link"style="margin-top: 20px;"> already a member? <a style="color: blue;" href="nLogin.html">login page</a></div>
 

@@ -1,24 +1,33 @@
 <?php
+global $conn;
 session_start();
-include 'db.php'; // Assuming db.php connects to the database
+include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nid = $_POST['nid'];
     $password = $_POST['password'];
 
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM person WHERE nid = ? AND password = ?");
-    $stmt->bind_param("ss", $nid, $password);
+    $stmt = $conn->prepare("SELECT Password FROM person WHERE nid = ?");
+    $stmt->bind_param("s", $nid);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt->store_result();
 
-    if ($result->num_rows == 1) {
-        header("Location: ../index.html");
+    if ($stmt->num_rows == 1) {
+        $stmt->bind_result($hashed_password);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['nid'] = $nid;
+            header("Location: ../index.php");
+            exit();
+        } else {
+            echo "Invalid NID or password";
+        }
     } else {
-        echo "Invalid email or password";
+        echo "Invalid NID or password";
     }
 
     $stmt->close();
     $conn->close();
 }
-?>

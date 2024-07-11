@@ -27,7 +27,7 @@ html{
 }
 .heading{
     text-align: center;
-    padding: bottom;
+
     text-shadow: var(--text-shadow);
     text-transform: uppercase;
     color: var(--black);

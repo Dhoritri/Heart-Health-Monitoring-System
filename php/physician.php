@@ -1,5 +1,6 @@
 <?php
 // Database connection
+global $conn;
 include 'db.php';
 
 // Get form data
@@ -28,19 +29,19 @@ if (move_uploaded_file($_FILES["certificate"]["tmp_name"], $target_file)) {
 }
 
 // Insert data into PERSON table
-$sql = "INSERT INTO PERSON (NID, FirstName, LastName, Gender, Password, DateOfBirth) 
+$sql = "INSERT INTO PERSON (NID, FirstName, LastName, Gender, Password, DateOfBirth)
         VALUES ('$nid', '$firstName', '$lastName', '$gender', '$password', '$dob')";
 
 if ($conn->query($sql) === TRUE) {
     // Insert data into PHYSICIAN table
-    $sql = "INSERT INTO PHYSICIAN (PhysicianID, Specialization, WorkHour, YearsExperience) 
+    $sql = "INSERT INTO PHYSICIAN (PhysicianID, Specialization, WorkHour, YearsExperience)
             VALUES ('$nid', '$specialization', '$startTime-$endTime', '$experience')";
-    
+
     if ($conn->query($sql) === TRUE) {
         // Insert data into PHYSICIAN_CERTIFICATE table
-        $sql = "INSERT INTO PHYSICIAN_CERTIFICATE (PhysicianID, Certification) 
+        $sql = "INSERT INTO PHYSICIAN_CERTIFICATE (PhysicianID, Certification)
                 VALUES ('$nid', '$certificate')";
-        
+
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
@@ -54,4 +55,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>

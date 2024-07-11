@@ -1,9 +1,7 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "nigga";
-$dbname = "hospitalmanagement";
+global $servername, $username, $password, $dbname;
+include 'db.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -24,19 +22,19 @@ $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $phone = $_POST['phone'];
 
 // Insert data into PERSON table
-$sql = "INSERT INTO PERSON (NID, FirstName, LastName, Gender, Password, DateOfBirth) 
+$sql = "INSERT INTO PERSON (NID, FirstName, LastName, Gender, Password, DateOfBirth)
         VALUES ('$nid', '$firstName', '$lastName', '$gender', '$password', '$dob')";
 
 if ($conn->query($sql) === TRUE) {
     // Insert data into PATIENT table
-    $sql = "INSERT INTO PATIENT (PatientID, Occupation, BloodGroup) 
+    $sql = "INSERT INTO PATIENT (PatientID, Occupation, BloodGroup)
             VALUES ('$nid', '$occupation', '$bloodGroup')";
-    
+
     if ($conn->query($sql) === TRUE) {
         // Insert data into PERSON_PHONE table
-        $sql = "INSERT INTO PERSON_PHONE (NID, Phone) 
+        $sql = "INSERT INTO PERSON_PHONE (NID, Phone)
                 VALUES ('$nid', '$phone')";
-        
+
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
@@ -50,4 +48,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>
