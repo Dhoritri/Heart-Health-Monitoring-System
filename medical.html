@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/medical.css">
 </head>
 <body>
+<?php include 'php/user_info.php'; ?>
   <header class="header">
     <a href="#" class="logo"><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a>
     <div class="nav-link">
@@ -35,7 +36,7 @@
     <section class="form">
     <div class="form-container">
         <h1>Medical History Form</h1>
-        <form id="medicalForm">
+        <form id="medicalForm" action="php/medical.php" method="post">
             <div class="wave-group">
                 <input required="" id="phone" name="contact" type="number" class="input">                
                 <span class="bar"></span>
