@@ -196,11 +196,38 @@
 .form-container a{
     font-size: 16px ;
 }
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
+
+
+h1 {
+    --s: 0.11em;   /* the thickness of the line */
+    --c: #0d7dfd; /* the color */
     
+    color: #0000;
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+    display: inline-block;
+  }
+  h1:hover {--_p: 100%}
+   
+  body {
+    text-align: center;
+    
+  }
+  h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    margin-bottom: 40px;
+    margin-top: 35px;
 }
+
+
+
 #patientName{
     border-radius: 20px;
 }
@@ -234,21 +261,121 @@ textarea {
     border-radius: 4px;
 }
 
+
+
+/****/
+
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+    position: relative;
     border: none;
-    border-radius: 20px;
-    font-size: 16px;
+    background: transparent;
+    padding: 0;
     cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    margin: 5% auto; 
+    display: block; 
+    width: 70%;
+    margin-top: 60px;
+  
+    
+   }
+
+   .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(202, 94%, 19%) 0%,
+       hsl(202, 94%, 21%) 8%,
+       hsl(202, 94%, 28%)  92%,
+       hsl(202, 94%, 19%) 100%
+     );
+   }
+   
+   .front {
+    display: block;
+    position: relative;
+    padding: 12px 150px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(0, 8, 8);
+    background: hsl(202, 100%, 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+@media (max-width: 768px) {
+    .front {
+        padding: 1em 15%; /* Adjusted padding for smaller screens */
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
 }
 
-button:hover {
-    background-color: #0056b3;
+@media (max-width: 480px) {
+    .front {
+        padding: 0.8em 20%; /* Further adjusted padding for very small screens */
+        font-size: 1rem; /* Further adjusted font size for very small screens */
+    }
 }
-
+   
+   button:hover {
+    filter: brightness(110%);
+   }
+   
+   button:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+   }
+   
+   button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+   }
+   
+   button:focus:not(:focus-visible) {
+    outline: none;
+   }
+/****/   
 
 
 /* media queries*/
@@ -301,3 +428,162 @@ button:hover {
         font-size:50%
     }
 }
+
+/* Responsive h2 */
+@media (max-width: 768px) { 
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+   }
+}
+@media (max-width: 450px) { 
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*letter waveing code*/
+.wave-group {
+    position: relative;
+  }
+  
+  .wave-group .input {
+    font-size: 15px;
+    padding: 10px 10px 10px 6px;
+    display: block;
+    width: 80%; /* Adjusted width for responsiveness */
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+    margin-bottom: 20px; 
+    margin-left: 35px;
+     
+  }
+  
+  .wave-group .input:focus {
+    outline: none;
+  }
+  
+  .wave-group .label {
+    color: #6d6c6c;
+    font-size: 15px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 9px;
+    top: 5px;
+    display: flex;
+    margin-left: 35px;
+     
+  }
+  
+  .wave-group .label-char {
+    transition: 0.3s ease all;
+    transition-delay: calc(var(--index) * .05s);
+  }
+  
+  .wave-group .input:focus ~ label .label-char,
+  .wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #0681b9;
+  }
+  
+  .wave-group .bar {
+    position: relative;
+    display: block;
+    width: 83%; /* Adjusted width for responsiveness */
+    margin-left: 35px;
+    
+  }
+  
+  .wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2.5px;
+    width: 0;
+    bottom: 19px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .wave-group .bar:before {
+    left: 50%;
+  }
+  
+  .wave-group .bar:after {
+    right: 50%;
+  }
+  
+  .wave-group .input:focus ~ .bar:before,
+  .wave-group .input:focus ~ .bar:after {
+    width: 50%;
+  }
+/*letter waveing code*/
+
+
+/*selection box*/
+.select-box select {
+    height: 100%;
+    width: 83%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1.6rem;
+    margin-right: 70px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-left: 35px;
+  }
+/*selection box*/
+
+
+.file-upload {
+    margin-bottom: 10px; /* Adjust as needed */
+    margin-right: 70px;
+    margin-left: 35px;
+    margin-top: 15px;
+}
+
+/* Style for the label */
+.wave-label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    margin-right: 200px;
+}
+
+/* Style for the input */
+.wave-input {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Optional: Style for file input button */
+.wave-input[type="file"] {
+    cursor: pointer;
+}  
