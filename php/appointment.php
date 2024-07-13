@@ -2,7 +2,8 @@
 
 global $conn;
 session_start();
-include 'db.php';
+include 'db.php'; // This file should handle the database connection
+
 // Get form data
 $name = $_POST['name'];
 $phone = $_POST['phone'];
@@ -17,13 +18,13 @@ $stmt->bind_param("sssdii", $date, $time, $status, $bill, $patientID, $physician
 
 // Set parameters and execute
 $status = 'Pending';
-$patientID = 1; // Replace with actual patient ID logic
-$physicianID = 1; // Replace with actual physician ID logic
+$patientID = $_SESSION['nid']; // Assuming PatientID is stored in session as NID
+$physicianID = 1; // Replace with actual logic to fetch physician ID
 
 if ($stmt->execute()) {
-  echo "Appointment booked successfully";
+    echo "Appointment booked successfully";
 } else {
-  echo "Error: " . $stmt->error;
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();

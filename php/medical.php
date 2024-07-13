@@ -5,7 +5,6 @@ session_start();
 include 'db.php';
 
 
-$
 $contact = $_POST['contact'];
 $medication =$_POST['$medication'];
 $medicalDate =$_POST['$medicalDate'];

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include 'php/db.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +20,6 @@
     />
 </head>
 <body>
-<?php include 'php/user_info.php'; ?>
 <header class="header">
     <a href="#" class="logo"
     ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
@@ -35,16 +38,25 @@
                 </div>
             </div>
             <div class="dropdown">
-                <a href="appointment.html" class="nvlink dropdown-toggle"
+                <a href="appointment.php" class="nvlink dropdown-toggle"
                 >Appointment</a
                 >
                 <div class="dropdown-menu">
-                    <a href="appointment.html">Appointment</a>
+                    <a href="appointment.php">Appointment</a>
                     <a href="doctors.html">Doctors</a>
                     <a href="book.html">Bed Facility</a>
                 </div>
             </div>
-            <a href="login.html"><button class="login">LogIn</button></a>
+            <div>
+                <?php
+                $nid = $_SESSION['nid'];
+                if (isset($_SESSION['nid'])) {
+                    echo '<div class="nvlink">User ID: ' . $nid . ' | <a href="login.php"><button class="login">Log Out</button></a></div>';
+                } else {
+                    echo '<a href="login.php"><button class="login">LogIn</button></a>';
+                }
+                ?>
+            </div>
         </nav>
     </div>
     <div id="menu-btn" class="fas fa-bars"></div>
@@ -127,7 +139,7 @@
             <h3>Medicine</h3>
             <p>Get Medicine Suggestions according to your Heart Issue</p>
             <a href="medicine.html" class="btn"
-            >Learn mores <span class="fas fa-chevron-right"></span
+            >Learn more <span class="fas fa-chevron-right"></span
                 ></a>
         </div>
         <div class="box">
@@ -135,7 +147,7 @@
             <h3>Bed Facility</h3>
             <p>Book beds quickly at your finger tip</p>
             <a href="book.html" class="btn"
-            >Learn mores <span class="fas fa-chevron-right"></span
+            >Learn more <span class="fas fa-chevron-right"></span
                 ></a>
         </div>
         <div class="box">
@@ -146,7 +158,7 @@
                 heart condition
             </p>
             <a href="recommended.html" class="btn"
-            >Learn mores <span class="fas fa-chevron-right"></span
+            >Learn more <span class="fas fa-chevron-right"></span
                 ></a>
         </div>
     </div>
@@ -258,5 +270,3 @@
 </script>
 </body>
 </html>
-
-

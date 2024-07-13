@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    global $conn;
+    session_start();
+    include 'php/db.php';
+?>
+<!DOCTYPE html>`
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +15,7 @@
 <body>
 <div class="container" id="container">
     <div class="form-container sign-in">
-        <form action="php/login.php" method="post">
+        <form method="post">
             <h1 style="color: #2c5664;">L o g i n</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
@@ -78,6 +83,36 @@
         </div>
     </div>
 </div>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nid = $_POST['nid'];
+        $password = $_POST['password'];
+
+        // Use prepared statements to prevent SQL injection
+        $stmt = $conn->prepare("SELECT Password FROM person WHERE nid = ?");
+        $stmt->bind_param("s", $nid);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows == 1) {
+            $stmt->bind_result($hashed_password);
+            $stmt->fetch();
+
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['nid'] = $nid;
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Invalid NID or password";
+            }
+        } else {
+            echo "Invalid NID or password";
+        }
+
+        $stmt->close();
+        $conn->close();
+    }
+?>
 <script src="js/nSignup.js"></script>
 </body>
 </html>
