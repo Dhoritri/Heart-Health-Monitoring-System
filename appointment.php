@@ -2,14 +2,15 @@
 session_start();
 $servername = "localhost";
 $username = "root";
-$password = "nigga"; // Change this to your actual password
-$dbname = "HospitalManagement";
+$password = "nigga";
+$dbname = "hospitalmanagement";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
 
 $nid = $_SESSION['nid'];
 $user = null;
@@ -157,6 +158,15 @@ if (isset($nid)) {
                         placeholder="Generate bill"
                         class="formbold-form-input"
                 />
+            </div>
+            <div class="formbold-mb-5">
+                <label for="physician" class="formbold-form-label"> Select Physician </label>
+                <select name="physician" id="physician" class="formbold-form-input">
+                    <option value="1">Dr. John Doe</option>
+                    <option value="2">Dr. Jane Smith</option>
+                    <option value="3">Dr. Michael Johnson</option>
+                    <option value="4">Dr. Emily Brown</option>
+                </select>
             </div>
             <div>
                 <button class="formbold-btn">Book Appointment</button>
