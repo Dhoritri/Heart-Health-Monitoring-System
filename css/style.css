@@ -527,3 +527,11 @@ a.footer-link{
     width: 100%;
 }
 }
+.number-ticker {
+    font-size: 4rem;
+    color: var(--black);
+    padding-bottom: .5rem 0 ;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    font-weight: 700;
+  }

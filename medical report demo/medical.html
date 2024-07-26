@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical History Form</title>
-    <link rel="stylesheet" href="medical.css">
+    <link rel="stylesheet" href="css/medical.css">
 </head>
 <body>
   <header class="header">
@@ -21,9 +21,9 @@
                   </div>
             </div>
             <div class="dropdown">
-                <a href="appointment.html" class="nvlink dropdown-toggle">Appointment</a>
+                <a href="appointment.php" class="nvlink dropdown-toggle">Appointment</a>
                 <div class="dropdown-menu">
-                    <a href="appointment.html">Appointment</a>
+                    <a href="appointment.php">Appointment</a>
                     <a href="doctors.html">Doctors</a>
                     <a href="book.html">Bed Facility</a>
                 </div>
@@ -35,7 +35,7 @@
     <section class="form">
     <div class="form-container">
         <h1>Medical History Form</h1>
-        <form id="medicalForm">
+        <form id="medicalForm" action="php/medical.php" method="post">
             <div class="wave-group">
                 <input required="" id="phone" name="contact" type="number" class="input">                
                 <span class="bar"></span>

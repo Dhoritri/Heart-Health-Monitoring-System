@@ -73,7 +73,7 @@
         <div class="typewriter">
             <p class="text">Get the best medical care from our expert doctors</p>
         </div>
-        <a href="#" class="btn contact-btn"
+        <a href="#footer" class="btn contact-btn"
         >Contact Us<span class="fas fa-chevron-right"></span
             ></a>
     </div>
@@ -82,35 +82,35 @@
     <div class="icons">
         <a href="doctorAnal.html">
             <i class="fas fa-user-md"></i>
-            <h3>140+</h3>
+            <h3 class="number-ticker" data-target-number="140">0</h3>
             <p>Doctors At Work</p>
         </a>
     </div>
     <div class="icons">
         <a href="patientAnalytics.html"
         ><i class="fas fa-user"></i>
-            <h3>1040+</h3>
+        <h3 class="number-ticker" data-target-number="1040">0</h3>
             <p>Satisfied Patients</p>
         </a>
     </div>
     <div class="icons">
         <a href="book.html">
             <i class="fas fa-procedures"></i>
-            <h3>100+</h3>
+            <h3 class="number-ticker" data-target-number="100">0</h3>
             <p>Bed Facility</p>
         </a>
     </div>
     <div class="icons">
         <a href="hospital.html">
             <i class="fas fa-hospital"></i>
-            <h3>80+</h3>
+            <h3 class="number-ticker" data-target-number="80">0</h3>
             <p>Available Hospitals</p>
         </a>
     </div>
     <div class="icons">
         <a href="diagnosis.html">
             <i class="fa fa-area-chart"></i>
-            <h3>80+</h3>
+            <h3 class="number-ticker" data-target-number="80">0</h3>
             <p>Diagnosis Data</p>
         </a>
     </div>
@@ -192,7 +192,7 @@
         </div>
     </div>
 </section>
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="box-container">
         <div class="box">
             <h3>Quick Links</h3>
@@ -203,19 +203,19 @@
         <div class="box">
             <h3>Extra Links</h3>
             <a href="#" class="footer-link">Ask Questions</a>
-            <a href="#" class="footer-link">Book Appointment</a>
+            <a href="appointment.php" class="footer-link">Book Appointment</a>
             <a href="#" class="footer-link">Send Feedback</a>
-            <a href="#" class="footer-link">Doctors</a>
+            <a href="doctors.html" class="footer-link">Doctors</a>
         </div>
         <div class="box">
             <h3>Contact Info</h3>
-            <p class="footer-p"><i class="fas fa-phone"></i> +345-8990-445</p>
+            <p class="footer-p" ><i class="fas fa-phone"></i> +345-8990-445</p>
             <p class="footer-p"><i class="fas fa-phone"></i> +452-2887-377</p>
             <p class="footer-p">
                 <i class="fas fa-envelope"></i> health@healthcare.com
             </p>
             <p class="footer-p">
-                <i class="fas fa-map-marker-alt"></i> Lucknow,India - 226021
+                <i class="fas fa-map-marker-alt"></i> Dhaka,Bangladesh - 226021
             </p>
         </div>
         <div class="box">
@@ -267,6 +267,35 @@
             dropdownMenu.classList.toggle("active");
         };
     });
+
+    //Counting animation//
+    document.addEventListener("DOMContentLoaded", function() {
+        function animateNumber(element, start, end, duration) {
+        let startTime = null;
+
+        function tick(currentTime) {
+            if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+        const elements = document.querySelectorAll('.number-ticker');
+            elements.forEach(element => {
+        const targetNumber = parseInt(element.getAttribute('data-target-number'), 10) || 0;
+        const duration = 2000;  // Duration of the animation in milliseconds
+
+            animateNumber(element, 0, targetNumber, duration);
+        });
+    });
+    //counting animation end//
+
 </script>
+<script src="Counting.js"></script>
 </body>
 </html>
