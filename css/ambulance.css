@@ -310,13 +310,6 @@ h2{
     padding: 0 15px;
 }
 
-.contacts h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #041570;
-}
-
 
 .contacts .contact-info {
     display: flex;
@@ -475,6 +468,75 @@ h2{
       width: 100%;
   }
   }
+
+
+
+
+
+h1 {
+    --s: 0.11em;   /* the thickness of the line */
+    --c: #0d7dfd; /* the color */
+    
+    color: #0000;
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%, #041570 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+    display: inline-block;
+    
+  }
+  h1:hover {--_p: 100%}
+   
+  body {
+    text-align: center;
+    
+    
+  }
+  h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 4rem;
+    cursor: pointer;
+    margin-top: 3%;
+    
+}
+
+
+
+ h2 {
+  --s: 0.11em;   /* the thickness of the line */
+  --c: #0d7dfd; /* the color */
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%, #041570 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+  display: inline-block;
+  
+}
+h1:hover {--_p: 100%}
+ 
+body {
+  text-align: center;
+  
+  
+}
+h2 {
+  font-family: system-ui, sans-serif;
+  cursor: pointer;
+  margin-top: 3%;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #041570;
+  
+}
   
 
 
@@ -542,5 +604,8 @@ body {
   --wp--style--global--wide-size: 1080px;
 
 }
+
+
+
 
 
