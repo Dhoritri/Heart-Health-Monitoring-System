@@ -77,6 +77,10 @@
         >Contact Us<span class="fas fa-chevron-right"></span
             ></a>
     </div>
+    <!--heart animated logo -->
+    <div class="video-container">
+        <video src="images/heart animation logo.webm" autoplay loop muted></video>
+    </div>
 </section>
 <section class="icons-container">
     <div class="icons">
