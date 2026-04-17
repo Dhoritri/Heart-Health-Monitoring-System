@@ -1,0 +1,198 @@
+/* Ambulance, Book, Medical, Recommended — shared misc page styles */
+
+/* ── Shared tip box (also used in appointment) ── */
+.appt-tip {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  padding: .85rem;
+  background: #FFF8E1;
+  border-radius: var(--radius-sm);
+  border: 1px solid #FFCC80;
+  margin-bottom: .75rem;
+  font-size: .8rem;
+  color: #E65100;
+  line-height: 1.6;
+}
+.appt-tip i { flex-shrink: 0; margin-top: .15rem; }
+
+/* ── Ambulance ── */
+.emergency-banner {
+  background: linear-gradient(135deg, var(--accent), #C62828);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.emergency-banner__icon { font-size: 3rem; flex-shrink: 0; }
+
+.emergency-banner h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: .35rem; }
+.emergency-banner p { color: rgba(255,255,255,.85); font-size: .9rem; }
+
+.emergency-numbers { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .85rem; }
+
+.emergency-number {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--radius-sm);
+  padding: .4rem .9rem;
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.ambulance-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.amb-type-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s;
+}
+
+.amb-type-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.amb-type-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.amb-type-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+.amb-type-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
+
+.amb-feature {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  color: var(--text-muted);
+  padding: .3rem 0;
+}
+
+.amb-feature i { color: var(--success); }
+
+/* ── Bed booking ── */
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ward-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+
+.ward-option {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.ward-option input { accent-color: var(--primary); }
+.ward-option:has(input:checked) { border-color: var(--primary); background: #EFF6FF; }
+
+.ward-option .ward-icon { font-size: 1.5rem; }
+.ward-option .ward-name { font-size: .875rem; font-weight: 600; }
+.ward-option .ward-desc { font-size: .75rem; color: var(--text-muted); }
+
+/* ── Medical history ── */
+.medical-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.conditions-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+}
+
+.condition-check {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.condition-check:hover { background: #EFF6FF; }
+.condition-check input { accent-color: var(--primary); }
+
+/* ── Recommended ── */
+.recommended-categories {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.rec-category {
+  padding: .5rem 1.1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.rec-category.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+.rec-category:hover { border-color: var(--teal); color: var(--teal); }
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.rec-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s;
+}
+
+.rec-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+.rec-card__icon { font-size: 2rem; margin-bottom: .75rem; }
+.rec-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .5rem; }
+.rec-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .book-layout, .medical-layout { grid-template-columns: 1fr; }
+  .ambulance-types { grid-template-columns: 1fr; }
+  .emergency-banner { flex-direction: column; text-align: center; }
+}

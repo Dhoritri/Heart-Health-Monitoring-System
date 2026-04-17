@@ -1,32 +1,42 @@
 <?php
+require_once dirname(__DIR__) . '/config.php';
+require_once dirname(__DIR__) . '/php/db.php';
 
-global $conn;
-session_start();
-include 'db.php'; // This file should handle the database connection
+if (session_status() === PHP_SESSION_NONE) session_start();
 
-// Get form data
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
-$date = $_POST['date'];
-$time = $_POST['time'];
-$bill = $_POST['bill'];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ' . BASE_URL . '/pages/appointment.php');
+    exit();
+}
 
-// Prepare and bind
-$stmt = $conn->prepare("INSERT INTO APPOINTMENT (AppointmentDate, AppointmentTime, Status, Cost, PatientID, PhysicianID) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssdii", $date, $time, $status, $bill, $patientID, $physicianID);
+if (empty($_SESSION['nid'])) {
+    header('Location: ' . BASE_URL . '/login.php');
+    exit();
+}
 
-// Set parameters and execute
-$status = 'Pending';
-$patientID = $_SESSION['nid']; // Assuming PatientID is stored in session as NID
-$physicianID = 1; // Replace with actual logic to fetch physician ID
+$date        = $_POST['date'] ?? '';
+$time        = $_POST['time'] ?? '';
+$physician   = intval($_POST['physician'] ?? 0);
+$patient_nid = $_SESSION['nid'];
+$status      = 'Pending';
+$cost        = floatval($_POST['bill'] ?? 0);
+
+if (!$date || !$time || !$physician) {
+    header('Location: ' . BASE_URL . '/pages/appointment.php?error=missing');
+    exit();
+}
+
+$stmt = $conn->prepare("INSERT INTO APPOINTMENT (AppointmentDate, AppointmentTime, Status, Cost, PatientID, PhysicianID) VALUES (?,?,?,?,?,?)");
+$stmt->bind_param('sssdsi', $date, $time, $status, $cost, $patient_nid, $physician);
 
 if ($stmt->execute()) {
-    echo "Appointment booked successfully";
-} else {
-    echo "Error: " . $stmt->error;
+    $stmt->close();
+    $conn->close();
+    header('Location: ' . BASE_URL . '/pages/appointment.php?success=1');
+    exit();
 }
 
 $stmt->close();
 $conn->close();
-?>
+header('Location: ' . BASE_URL . '/pages/appointment.php?error=failed');
+exit();

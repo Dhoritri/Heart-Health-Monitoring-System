@@ -1,0 +1,87 @@
+.appointment-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.appt-form-card .card-body { padding: 2rem; }
+
+.appt-form-card .form-row { gap: 1.25rem; }
+
+.physician-select-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.physician-option {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.physician-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.physician-option:has(input:checked),
+.physician-option.selected {
+  border-color: var(--primary);
+  background: #EFF6FF;
+}
+
+.physician-option .doc-name {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .2rem;
+}
+
+.physician-option .doc-spec {
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+
+/* Sidebar info */
+.appt-sidebar .card { margin-bottom: 1.25rem; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .875rem;
+}
+
+.info-row:last-child { border-bottom: none; }
+.info-row span:first-child { color: var(--text-muted); }
+.info-row span:last-child { font-weight: 600; }
+
+.appt-tip {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  padding: .85rem;
+  background: #FFF8E1;
+  border-radius: var(--radius-sm);
+  border: 1px solid #FFCC80;
+  margin-bottom: .75rem;
+  font-size: .8rem;
+  color: #E65100;
+  line-height: 1.6;
+}
+
+.appt-tip i { flex-shrink: 0; margin-top: .15rem; }
+
+@media (max-width: 900px) {
+  .appointment-layout { grid-template-columns: 1fr; }
+  .physician-select-grid { grid-template-columns: 1fr; }
+}

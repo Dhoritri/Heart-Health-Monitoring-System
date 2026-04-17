@@ -30,7 +30,7 @@ CREATE TABLE `medical_history` (
   PRIMARY KEY (`MH_ID`),
   KEY `PatientID` (`PatientID`),
   CONSTRAINT `medical_history_ibfk_1` FOREIGN KEY (`PatientID`) REFERENCES `patient` (`PatientID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

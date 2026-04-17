@@ -1,12 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "nigga";
-$dbname = "hospitalmanagement";
+require_once dirname(__DIR__) . '/config.php';
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset('utf8mb4');
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    http_response_code(500);
+    die(json_encode(['error' => 'Database connection failed']));
 }
-?>

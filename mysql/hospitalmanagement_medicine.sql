@@ -34,7 +34,7 @@ CREATE TABLE `medicine` (
   KEY `PatientID` (`PatientID`),
   CONSTRAINT `medicine_ibfk_1` FOREIGN KEY (`PhysicianID`) REFERENCES `physician` (`PhysicianID`),
   CONSTRAINT `medicine_ibfk_2` FOREIGN KEY (`PatientID`) REFERENCES `patient` (`PatientID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

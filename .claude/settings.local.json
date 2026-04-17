@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/e/Heart-Health-Monitoring-System/mysql\" -name \"*.sql\" -exec sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' {} +)",
+      "Bash(\"C:/xampp/mysql/bin/mysql.exe\" -u root -e \"DROP DATABASE IF EXISTS hospitalmanagement; CREATE DATABASE hospitalmanagement CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\")",
+      "Bash(C:/xampp/php/php.exe *)",
+      "Bash(C:/xampp/mysql/bin/mysql.exe *)",
+      "Bash(\"C:/xampp/php/php.exe\" -l /c/xampp/htdocs/Heart-Health-Monitoring-System/config.php)",
+      "Bash(\"C:/xampp/php/php.exe\" -l /c/xampp/htdocs/Heart-Health-Monitoring-System/index.php)",
+      "Bash(\"C:/xampp/php/php.exe\" -l /c/xampp/htdocs/Heart-Health-Monitoring-System/login.php)",
+      "Bash(\"C:/xampp/php/php.exe\" -l /c/xampp/htdocs/Heart-Health-Monitoring-System/signup.php)",
+      "Bash(cp /e/Heart-Health-Monitoring-System/config.php /c/xampp/htdocs/Heart-Health-Monitoring-System/config.php)",
+      "Bash(cp /e/Heart-Health-Monitoring-System/includes/footer.php /c/xampp/htdocs/Heart-Health-Monitoring-System/includes/footer.php)",
+      "Bash(cp /e/Heart-Health-Monitoring-System/includes/header.php /c/xampp/htdocs/Heart-Health-Monitoring-System/includes/header.php)",
+      "Bash(cp /e/Heart-Health-Monitoring-System/assets/css/pages/misc.css /c/xampp/htdocs/Heart-Health-Monitoring-System/assets/css/pages/misc.css)",
+      "Bash(cp /e/Heart-Health-Monitoring-System/pages/appointment.php /c/xampp/htdocs/Heart-Health-Monitoring-System/pages/appointment.php)",
+      "Bash(cp -r /e/Heart-Health-Monitoring-System/assets /c/xampp/htdocs/Heart-Health-Monitoring-System/)",
+      "Bash(cp -r /e/Heart-Health-Monitoring-System/includes /c/xampp/htdocs/Heart-Health-Monitoring-System/)",
+      "Bash(cp -r /e/Heart-Health-Monitoring-System/pages /c/xampp/htdocs/Heart-Health-Monitoring-System/)",
+      "Bash(cp -r /e/Heart-Health-Monitoring-System/php /c/xampp/htdocs/Heart-Health-Monitoring-System/)"
+    ]
+  }
+}

@@ -27,7 +27,7 @@ CREATE TABLE `surgery_history` (
   `Surgery` varchar(255) NOT NULL,
   PRIMARY KEY (`MH_ID`,`Surgery`),
   CONSTRAINT `surgery_history_ibfk_1` FOREIGN KEY (`MH_ID`) REFERENCES `medical_history` (`MH_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

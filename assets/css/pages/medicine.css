@@ -1,0 +1,90 @@
+.medicine-selector {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .75rem;
+  margin-bottom: 2rem;
+}
+
+.condition-btn {
+  padding: .75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.condition-btn:hover { border-color: var(--primary); color: var(--primary); }
+.condition-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.meds-result {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: none;
+}
+
+.meds-result.visible { display: block; }
+
+.meds-result__header {
+  background: linear-gradient(135deg, var(--primary), var(--teal));
+  padding: 1.25rem 1.5rem;
+  color: #fff;
+}
+
+.meds-result__header h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .2rem; }
+.meds-result__header p { font-size: .8rem; color: rgba(255,255,255,.8); }
+
+.meds-result__body { padding: 1.5rem; }
+
+.med-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .85rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  margin-bottom: .6rem;
+  transition: all var(--transition);
+}
+
+.med-item:hover { background: #EFF6FF; }
+
+.med-item__icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--teal));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: .9rem;
+  flex-shrink: 0;
+}
+
+.med-item__name { font-size: .9rem; font-weight: 600; }
+
+.disclaimer {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background: #FFF3E0;
+  border-radius: var(--radius-sm);
+  border: 1px solid #FFCC80;
+  margin-top: 1.5rem;
+  font-size: .825rem;
+  color: #E65100;
+  line-height: 1.6;
+}
+
+.disclaimer i { flex-shrink: 0; margin-top: .15rem; }

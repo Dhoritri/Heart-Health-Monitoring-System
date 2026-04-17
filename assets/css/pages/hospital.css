@@ -1,0 +1,85 @@
+.city-tabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.city-tab {
+  padding: .5rem 1.1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.city-tab:hover { border-color: var(--primary); color: var(--primary); }
+.city-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.hospitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.hospital-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s ease;
+}
+
+.hospital-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.hospital-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.hospital-card__img-placeholder {
+  width: 100%; height: 160px;
+  background: linear-gradient(135deg, #EFF6FF, #E0F7FA);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem;
+}
+
+.hospital-card__body { padding: 1.25rem; }
+
+.hospital-card__name {
+  font-size: .95rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+  color: var(--text);
+}
+
+.hospital-card__addr {
+  font-size: .8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: .35rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.hospital-card__addr i { color: var(--accent); margin-top: .15rem; flex-shrink: 0; }
+
+.hospital-card__footer {
+  padding: .85rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+#hospitals-empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}

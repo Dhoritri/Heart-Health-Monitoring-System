@@ -1,305 +1,248 @@
 <?php
-    session_start();
-    include 'php/db.php';
+require_once __DIR__ . '/config.php';
+require_once ROOT_DIR . '/includes/auth.php';
+
+$page_title = 'HeartCare — Heart Health Monitoring';
+$extra_css  = ['/assets/css/pages/home.css'];
+require_once ROOT_DIR . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HeartCare | Home</title>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-</head>
-<body>
-<header class="header">
-    <a href="#" class="logo"
-    ><i class="fas fa-heartbeat"></i>Heart<i>C</i>are.</a
-    >
-    <div class="nav-link">
-        <nav class="nav">
-            <a href="#home" class="nvlink">Home</a>
-            <a href="#services" class="nvlink">Services</a>
-            <a href="#about" class="nvlink">About</a>
-            <div class="dropdown">
-                <a href="doctors.html" class="nvlink dropdown-toggle">Facility</a>
-                <div class="dropdown-menu">
-                    <a href="medicine.html">Medicine</a>
-                    <a href="recommended.html">Recommendation</a>
-                    <a href="hospital.html">Hospital</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="appointment.php" class="nvlink dropdown-toggle"
-                >Appointment</a
-                >
-                <div class="dropdown-menu">
-                    <a href="appointment.php">Appointment</a>
-                    <a href="doctors.html">Doctors</a>
-                    <a href="book.html">Bed Facility</a>
-                </div>
-            </div>
-            <div>
-                <?php
-                $nid = $_SESSION['nid'];
-                if (isset($_SESSION['nid'])) {
-                    echo '<div class="nvlink">User ID: ' . $nid . ' | <a href="login.php"><button class="login">Log Out</button></a></div>';
-                } else {
-                    echo '<a href="login.php"><button class="login">LogIn</button></a>';
-                }
-                ?>
-            </div>
-        </nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__tag"><i class="fas fa-heartbeat"></i> Bangladesh's #1 Cardiac Platform</div>
+      <h1 class="hero__title">
+        Your Heart Deserves<br>
+        <em>Expert Care.</em><br>
+        Right Now.
+      </h1>
+      <p class="hero__subtitle">
+        Connect with 140+ specialist cardiologists, access top-tier hospitals across Bangladesh, and monitor your heart health — all in one place.
+      </p>
+      <div class="hero__actions">
+        <a href="<?= BASE_URL ?>/pages/appointment.php" class="btn btn-accent btn-lg">
+          <i class="fas fa-calendar-plus"></i> Book Appointment
+        </a>
+        <a href="<?= BASE_URL ?>/pages/doctors.php" class="btn btn-ghost btn-lg">
+          <i class="fas fa-user-md"></i> Find Doctors
+        </a>
+      </div>
     </div>
-    <div id="menu-btn" class="fas fa-bars"></div>
-</header>
-<section class="home" id="home">
-    <div class="image">
-        <img
-                src="images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif"
-                alt=""
+
+    <div class="hero__ecg">
+      <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- ECG grid lines -->
+        <defs>
+          <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+            <path d="M 26 0 L 0 0 0 26" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width=".5"/>
+          </pattern>
+        </defs>
+        <rect width="520" height="280" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <rect width="520" height="280" rx="20" fill="url(#grid)"/>
+
+        <!-- ECG line -->
+        <polyline
+          points="0,140 40,140 60,140 70,80 80,200 90,30 100,200 110,140 140,140 160,140 180,140 190,100 200,180 210,60 220,190 230,140 260,140 280,140 300,140 310,100 320,175 330,55 340,185 350,140 380,140 400,140 420,140 430,95 440,180 450,50 460,185 470,140 500,140 520,140"
+          stroke="rgba(255,255,255,0.9)"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
+
+        <!-- Animated pulse dot -->
+        <circle r="5" fill="#E53935">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M0,140 L40,140 L60,140 L70,80 L80,200 L90,30 L100,200 L110,140 L140,140 L160,140 L180,140 L190,100 L200,180 L210,60 L220,190 L230,140 L260,140 L280,140 L300,140 L310,100 L320,175 L330,55 L340,185 L350,140 L380,140 L400,140 L420,140 L430,95 L440,180 L450,50 L460,185 L470,140 L500,140 L520,140"/>
+        </circle>
+
+        <!-- Labels -->
+        <text x="20" y="268" fill="rgba(255,255,255,0.4)" font-size="11" font-family="Inter,sans-serif">Live ECG Monitor</text>
+        <text x="420" y="268" fill="#4ADE80" font-size="11" font-family="Inter,sans-serif">● Normal Sinus</text>
+      </svg>
     </div>
-    <div class="content">
-        <h3>Stay Safe, Stay Healthy</h3>
-        <div class="typewriter">
-            <p class="text">Get the best medical care from our expert doctors</p>
-        </div>
-        <a href="#footer" class="btn contact-btn"
-        >Contact Us<span class="fas fa-chevron-right"></span
-            ></a>
-    </div>
-    <!--heart animated logo -->
-    <div class="video-container">
-        <video src="images/heart animation logo.webm" autoplay loop muted></video>
-    </div>
+  </div>
 </section>
-<section class="icons-container">
-    <div class="icons">
-        <a href="doctorAnal.html">
-            <i class="fas fa-user-md"></i>
-            <h3 class="number-ticker" data-target-number="140">0</h3>
-            <p>Doctors At Work</p>
-        </a>
+
+<!-- ── Stats strip ── -->
+<section class="stats-strip">
+  <div class="stats-strip__inner">
+    <div class="stat-item">
+      <div class="stat-item__icon" style="color:#0D47A1">🩺</div>
+      <div class="stat-item__number" data-counter data-target="140">0</div>
+      <div class="stat-item__label">Specialist Doctors</div>
     </div>
-    <div class="icons">
-        <a href="patientAnalytics.html"
-        ><i class="fas fa-user"></i>
-        <h3 class="number-ticker" data-target-number="1040">0</h3>
-            <p>Satisfied Patients</p>
-        </a>
+    <div class="stat-item">
+      <div class="stat-item__icon" style="color:#E53935">❤️</div>
+      <div class="stat-item__number" data-counter data-target="1040">0</div>
+      <div class="stat-item__label">Patients Served</div>
     </div>
-    <div class="icons">
-        <a href="book.html">
-            <i class="fas fa-procedures"></i>
-            <h3 class="number-ticker" data-target-number="100">0</h3>
-            <p>Bed Facility</p>
-        </a>
+    <div class="stat-item">
+      <div class="stat-item__icon" style="color:#00ACC1">🏥</div>
+      <div class="stat-item__number" data-counter data-target="80">0</div>
+      <div class="stat-item__label">Partner Hospitals</div>
     </div>
-    <div class="icons">
-        <a href="hospital.html">
-            <i class="fas fa-hospital"></i>
-            <h3 class="number-ticker" data-target-number="80">0</h3>
-            <p>Available Hospitals</p>
-        </a>
+    <div class="stat-item">
+      <div class="stat-item__icon" style="color:#43A047">🛏️</div>
+      <div class="stat-item__number" data-counter data-target="500">0</div>
+      <div class="stat-item__label">Bed Capacity</div>
     </div>
-    <div class="icons">
-        <a href="diagnosis.html">
-            <i class="fa fa-area-chart"></i>
-            <h3 class="number-ticker" data-target-number="80">0</h3>
-            <p>Diagnosis Data</p>
-        </a>
+    <div class="stat-item">
+      <div class="stat-item__icon" style="color:#FB8C00">📊</div>
+      <div class="stat-item__number" data-counter data-target="10">0</div>
+      <div class="stat-item__label">Conditions Tracked</div>
     </div>
+  </div>
 </section>
-<section class="services" id="services">
-    <h1 class="heading">our <span>services</span></h1>
-    <div class="box-container">
-        <div class="box">
-            <i class="fas fa-notes-medical"></i>
-            <h3>Scheduled Checkups</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
-        </div>
-        <div class="box">
-            <i class="fas fa-ambulance"></i>
-            <h3>24/7 Ambulance Services</h3>
-            <p>We have fast Ambulance services</p>
-            <a href="ambulance.html" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
-        </div>
-        <div class="box">
-            <i class="fas fa-pills"></i>
-            <h3>Medicine</h3>
-            <p>Get Medicine Suggestions according to your Heart Issue</p>
-            <a href="medicine.html" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
-        </div>
-        <div class="box">
-            <i class="fas fa-procedures"></i>
-            <h3>Bed Facility</h3>
-            <p>Book beds quickly at your finger tip</p>
-            <a href="book.html" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
-        </div>
-        <div class="box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Total Care</h3>
-            <p>
-                Get Recommendations for diets,Tests and Facilities according to your
-                heart condition
-            </p>
-            <a href="recommended.html" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
-        </div>
-    </div>
+
+<!-- ── Services ── -->
+<section class="services">
+  <div class="services__header">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Complete Heart Care Services</h2>
+    <p class="section-subtitle">From diagnosis to recovery — we support every step of your cardiac health journey.</p>
+  </div>
+
+  <div class="services__grid">
+    <a href="<?= BASE_URL ?>/pages/appointment.php" class="service-card">
+      <div class="service-card__icon" style="background:#EEF2FF; color:#3730A3">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <h3>Book Appointments</h3>
+      <p>Schedule consultations with cardiologists at your convenience. Choose your doctor, date, and time with ease.</p>
+      <span class="service-card__link">Book now <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="<?= BASE_URL ?>/pages/doctors.php" class="service-card">
+      <div class="service-card__icon" style="background:#EFF6FF; color:#0D47A1">
+        <i class="fas fa-user-md"></i>
+      </div>
+      <h3>Find Specialists</h3>
+      <p>Browse our directory of 140+ board-certified cardiologists across Bangladesh with specializations and availability.</p>
+      <span class="service-card__link">Find doctors <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="<?= BASE_URL ?>/pages/hospital.php" class="service-card">
+      <div class="service-card__icon" style="background:#E0F7FA; color:#006064">
+        <i class="fas fa-hospital-alt"></i>
+      </div>
+      <h3>Hospital Directory</h3>
+      <p>Explore 80+ partner hospitals across Dhaka, Chattogram, Khulna, Rajshahi, Sylhet, Barishal, and Rangpur.</p>
+      <span class="service-card__link">Explore hospitals <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="<?= BASE_URL ?>/pages/book.php" class="service-card">
+      <div class="service-card__icon" style="background:#FFF3E0; color:#E65100">
+        <i class="fas fa-procedures"></i>
+      </div>
+      <h3>Bed Booking</h3>
+      <p>Reserve hospital beds in advance. Choose your preferred ward and check-in dates without the last-minute rush.</p>
+      <span class="service-card__link">Reserve bed <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="<?= BASE_URL ?>/pages/medicine.php" class="service-card">
+      <div class="service-card__icon" style="background:#F3E8FF; color:#6B21A8">
+        <i class="fas fa-pills"></i>
+      </div>
+      <h3>Medicine Guide</h3>
+      <p>Get medication recommendations based on your heart condition. Always consult your physician before use.</p>
+      <span class="service-card__link">View medicines <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="<?= BASE_URL ?>/pages/ambulance.php" class="service-card">
+      <div class="service-card__icon" style="background:#FFF1F2; color:#9F1239">
+        <i class="fas fa-ambulance"></i>
+      </div>
+      <h3>24/7 Ambulance</h3>
+      <p>Access emergency cardiac ambulance services with ALS, BLS, and mobile ICU support across major cities.</p>
+      <span class="service-card__link">Emergency info <i class="fas fa-arrow-right"></i></span>
+    </a>
+  </div>
 </section>
-<section class="about" id="about">
-    <h1 class="heading"><span>about</span> us</h1>
-    <div class="row">
-        <div class="image">
-            <img
-                    src="images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif"
-                    alt="banner"
-            />
+
+<!-- ── Why Us ── -->
+<section class="why-us">
+  <div class="why-us__inner">
+    <div class="why-us__content">
+      <div class="section-label">Why HeartCare</div>
+      <h2 class="section-title">Built for Bangladesh's Cardiac Patients</h2>
+      <div class="why-us__list">
+        <div class="why-us__item">
+          <div class="why-us__item-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h4>Verified Specialists Only</h4>
+            <p>Every doctor on our platform is board-certified with verified credentials and hospital affiliations.</p>
+          </div>
         </div>
-        <div class="content">
-            <h3>We Take Care Of Healthy Life</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro
-                iusto esse iste numquam provident perspiciatis, laudantium
-                molestias? Doloribus error voluptate placeat magni possimus dolorum
-                sapiente. Assumenda vero facere sunt accusantium!
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non facilis
-                neque, enim nemo eveniet incidunt tempora veritatis. Doloribus
-                maxime placeat nihil sed id eius porro accusantium cupiditate, velit
-                asperiores tenetur?
-            </p>
-            <a href="#" class="btn"
-            >Learn more <span class="fas fa-chevron-right"></span
-                ></a>
+        <div class="why-us__item">
+          <div class="why-us__item-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Nationwide Coverage</h4>
+            <p>Partner hospitals and clinics in all 8 major divisions of Bangladesh for accessibility wherever you are.</p>
+          </div>
         </div>
+        <div class="why-us__item">
+          <div class="why-us__item-icon"><i class="fas fa-chart-line"></i></div>
+          <div>
+            <h4>Data-Driven Insights</h4>
+            <p>Track diagnosis trends, medication history, and health analytics to understand your cardiac health better.</p>
+          </div>
+        </div>
+        <div class="why-us__item">
+          <div class="why-us__item-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Always Available</h4>
+            <p>Emergency ambulance services and 24/7 hospital bed booking for when every minute counts.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="why-us__image">
+      <img src="<?= BASE_URL ?>/images/medical-banner-with-doctor-wearing-goggles_23-2149611193.avif" alt="Expert cardiac care" />
+    </div>
+  </div>
 </section>
-<footer class="footer" id="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>Quick Links</h3>
-            <a href="#home" class="footer-link">Home</a>
-            <a href="#services" class="footer-link">Services</a>
-            <a href="#about" class="footer-link">About</a>
-        </div>
-        <div class="box">
-            <h3>Extra Links</h3>
-            <a href="#" class="footer-link">Ask Questions</a>
-            <a href="appointment.php" class="footer-link">Book Appointment</a>
-            <a href="#" class="footer-link">Send Feedback</a>
-            <a href="doctors.html" class="footer-link">Doctors</a>
-        </div>
-        <div class="box">
-            <h3>Contact Info</h3>
-            <p class="footer-p" ><i class="fas fa-phone"></i> +345-8990-445</p>
-            <p class="footer-p"><i class="fas fa-phone"></i> +452-2887-377</p>
-            <p class="footer-p">
-                <i class="fas fa-envelope"></i> health@healthcare.com
-            </p>
-            <p class="footer-p">
-                <i class="fas fa-map-marker-alt"></i> Dhaka,Bangladesh - 226021
-            </p>
-        </div>
-        <div class="box">
-            <h3>Follow Us</h3>
-            <a href="#" class="footer-link"
-            ><i class="fab fa-facebook"></i>Facebook</a
-            >
-            <a href="#" class="footer-link"
-            ><i class="fab fa-twitter"></i>Twitter</a
-            >
-            <a href="#" class="footer-link"
-            ><i class="fab fa-linkedin"></i>LinkedIn</a
-            >
-            <a href="#" class="footer-link"
-            ><i class="fab fa-instagram"></i>Instagram</a
-            >
-        </div>
+
+<!-- ── How It Works ── -->
+<section class="how-it-works">
+  <div class="how-it-works__header">
+    <div class="section-label">Getting Started</div>
+    <h2 class="section-title">Care in 3 Simple Steps</h2>
+    <p class="section-subtitle" style="margin:0 auto">Getting the right cardiac care has never been simpler.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__number">1</div>
+      <h3>Create Your Account</h3>
+      <p>Sign up as a patient in under 2 minutes. We securely store your medical profile for quick appointment booking.</p>
     </div>
-</footer>
-<script>
-    let menu = document.querySelector("#menu-btn");
-    let nav = document.querySelector(".nav");
-    let dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    <div class="step">
+      <div class="step__number">2</div>
+      <h3>Find Your Doctor</h3>
+      <p>Browse our specialist directory and filter by specialization, city, experience, or availability.</p>
+    </div>
+    <div class="step">
+      <div class="step__number">3</div>
+      <h3>Book & Get Care</h3>
+      <p>Confirm your appointment, arrive at the clinic, and receive expert cardiac care with your full history ready.</p>
+    </div>
+  </div>
+</section>
 
-    menu.onclick = () => {
-        menu.classList.toggle("fa-times");
-        nav.classList.toggle("active");
-    };
+<!-- ── CTA ── -->
+<section class="cta-banner">
+  <h2>Your Heart Can't Wait</h2>
+  <p>Join thousands of patients who trust HeartCare for their cardiac health management.</p>
+  <div class="flex flex-center gap-2">
+    <a href="<?= BASE_URL ?>/signup.php" class="btn btn-ghost btn-lg">
+      <i class="fas fa-user-plus"></i> Sign Up Free
+    </a>
+    <a href="<?= BASE_URL ?>/pages/appointment.php" class="btn btn-lg" style="background:#fff;color:var(--accent);">
+      <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+  </div>
+</section>
 
-    window.onscroll = () => {
-        menu.classList.remove("fa-times");
-        nav.classList.remove("active");
-    };
-
-    // Close dropdowns on click outside
-    document.addEventListener("click", function (event) {
-        let isClickInside = nav.contains(event.target);
-        if (!isClickInside) {
-            menu.classList.remove("fa-times");
-            nav.classList.remove("active");
-        }
-    });
-
-    // Toggle dropdown on mobile
-    dropdownToggles.forEach((toggle) => {
-        toggle.onclick = (event) => {
-            event.preventDefault();
-            let dropdownMenu = toggle.nextElementSibling;
-            dropdownMenu.classList.toggle("active");
-        };
-    });
-
-    //Counting animation//
-    document.addEventListener("DOMContentLoaded", function() {
-        function animateNumber(element, start, end, duration) {
-        let startTime = null;
-
-        function tick(currentTime) {
-            if (!startTime) startTime = currentTime;
-                const progress = Math.min((currentTime - startTime) / duration, 1);
-                element.textContent = Math.floor(progress * (end - start) + start);
-            if (progress < 1) {
-                requestAnimationFrame(tick);
-            }
-        }
-
-        requestAnimationFrame(tick);
-    }
-
-        const elements = document.querySelectorAll('.number-ticker');
-            elements.forEach(element => {
-        const targetNumber = parseInt(element.getAttribute('data-target-number'), 10) || 0;
-        const duration = 2000;  // Duration of the animation in milliseconds
-
-            animateNumber(element, 0, targetNumber, duration);
-        });
-    });
-    //counting animation end//
-
-</script>
-<script src="Counting.js"></script>
-</body>
-</html>
+<?php require_once ROOT_DIR . '/includes/footer.php'; ?>

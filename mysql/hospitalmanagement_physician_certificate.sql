@@ -27,7 +27,7 @@ CREATE TABLE `physician_certificate` (
   `Certification` varchar(255) NOT NULL,
   PRIMARY KEY (`PhysicianID`,`Certification`),
   CONSTRAINT `physician_certificate_ibfk_1` FOREIGN KEY (`PhysicianID`) REFERENCES `physician` (`PhysicianID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

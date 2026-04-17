@@ -1,33 +1,40 @@
 <?php
-global $conn;
-session_start();
-include 'db.php';
+require_once dirname(__DIR__) . '/config.php';
+require_once dirname(__DIR__) . '/php/db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nid = $_POST['nid'];
-    $password = $_POST['password'];
+if (session_status() === PHP_SESSION_NONE) session_start();
 
-    // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT Password FROM person WHERE nid = ?");
-    $stmt->bind_param("s", $nid);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows == 1) {
-        $stmt->bind_result($hashed_password);
-        $stmt->fetch();
-
-        if (password_verify($password, $hashed_password)) {
-            $_SESSION['nid'] = $nid;
-            header("Location: ../index.php");
-            exit();
-        } else {
-            echo "Invalid NID or password";
-        }
-    } else {
-        echo "Invalid NID or password";
-    }
-
-    $stmt->close();
-    $conn->close();
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ' . BASE_URL . '/login.php');
+    exit();
 }
+
+$nid      = trim($_POST['nid'] ?? '');
+$password = $_POST['password'] ?? '';
+
+if ($nid === '' || $password === '') {
+    header('Location: ' . BASE_URL . '/login.php?error=empty');
+    exit();
+}
+
+$stmt = $conn->prepare("SELECT Password FROM PERSON WHERE NID = ?");
+$stmt->bind_param('s', $nid);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows === 1) {
+    $stmt->bind_result($hash);
+    $stmt->fetch();
+    if (password_verify($password, $hash)) {
+        $_SESSION['nid'] = $nid;
+        $stmt->close();
+        $conn->close();
+        header('Location: ' . BASE_URL . '/index.php');
+        exit();
+    }
+}
+
+$stmt->close();
+$conn->close();
+header('Location: ' . BASE_URL . '/login.php?error=invalid');
+exit();
